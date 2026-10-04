@@ -4,1955 +4,891 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="野境 Wildlife Journal——关注野生动物保护、生物多样性、生态环境与可持续未来。">
-<meta name="keywords" content="野生动物,动物保护,濒危物种,生态环境,生物多样性,自然保护">
-<title>野境 Wildlife Journal | 守护生命，共享地球</title>
-
+<meta name="description" content="帮助家长理解叛逆期孩子，通过有效沟通、积极倾听和尊重边界，建立良好的亲子关系。">
+<title>与成长同行 | 如何教育叛逆孩子</title>
 <style>
-/* =========================
-   01. 全局基础样式
-========================= */
-:root {
-  --green: #285c43;
-  --green-dark: #193c2c;
-  --green-light: #e8f0e8;
-  --lime: #d4e7a2;
-  --cream: #f8f7f0;
-  --paper: #ffffff;
-  --text: #26342c;
-  --muted: #728076;
-  --border: #e3e8df;
-  --shadow: 0 12px 35px rgba(35, 65, 45, .08);
-  --radius: 18px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
-  background: var(--cream);
-  color: var(--text);
-  line-height: 1.8;
-  transition: background .3s, color .3s;
-}
-
-body.dark {
-  --cream: #141e18;
-  --paper: #1d2a22;
-  --text: #e4eee5;
-  --muted: #a2b3a6;
-  --border: #33463a;
-  --green-light: #263c2e;
-  --shadow: 0 12px 35px rgba(0,0,0,.18);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button, input, textarea, select {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-.container {
-  width: min(1160px, 92%);
-  margin: 0 auto;
-}
-
-.section {
-  padding: 88px 0;
-}
-
-.section-heading {
-  max-width: 700px;
-  margin-bottom: 36px;
-}
-
-.eyebrow {
-  display: inline-block;
-  color: var(--green);
-  background: var(--green-light);
-  border-radius: 100px;
-  padding: 5px 14px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-}
-
-.dark .eyebrow {
-  color: var(--lime);
-}
-
-.section-heading h2 {
-  font-size: clamp(28px, 4vw, 43px);
-  line-height: 1.3;
-  letter-spacing: -1px;
-  margin-bottom: 13px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  border: 1px solid var(--green);
-  border-radius: 100px;
-  padding: 12px 24px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: transform .2s, background .2s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn-primary {
-  background: var(--green);
-  color: white;
-}
-
-.btn-outline {
-  color: var(--green);
-}
-
-.dark .btn-outline {
-  color: var(--lime);
-  border-color: var(--lime);
-}
-
-.tag {
-  display: inline-block;
-  color: var(--green);
-  background: var(--green-light);
-  border-radius: 6px;
-  padding: 3px 9px;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-/* =========================
-   02. 顶部导航
-========================= */
-.topbar {
-  background: var(--green-dark);
-  color: #e7f0e7;
-  text-align: center;
-  padding: 7px 12px;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--paper);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 23px;
-  font-weight: 900;
-  color: var(--green);
-  white-space: nowrap;
-}
-
-.logo-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  background: var(--green);
-  color: white;
-  border-radius: 14px 14px 14px 4px;
-  font-size: 24px;
-}
-
-.logo small {
-  display: block;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  color: var(--muted);
-  line-height: 1.2;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 27px;
-  list-style: none;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.nav-links a:hover {
-  color: var(--green);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.icon-btn {
-  border: 1px solid var(--border);
-  background: var(--paper);
-  color: var(--text);
-  width: 39px;
-  height: 39px;
-  border-radius: 50%;
-  font-size: 17px;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-/* =========================
-   03. 首页主视觉
-========================= */
-.hero {
-  background: var(--green-dark);
-  color: white;
-  overflow: hidden;
-}
-
-.hero-grid {
-  min-height: 555px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 45px;
-  padding-top: 35px;
-  padding-bottom: 35px;
-}
-
-.hero-copy {
-  padding: 35px 0;
-}
-
-.hero-label {
-  color: var(--lime);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 23px;
-}
-
-.hero h1 {
-  font-size: clamp(38px, 5.4vw, 66px);
-  line-height: 1.18;
-  letter-spacing: -2px;
-  margin-bottom: 23px;
-}
-
-.hero h1 span {
-  color: var(--lime);
-}
-
-.hero-copy p {
-  max-width: 520px;
-  color: #c4d6c8;
-  font-size: 15px;
-  margin-bottom: 30px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.hero .btn-primary {
-  background: var(--lime);
-  color: var(--green-dark);
-  border-color: var(--lime);
-}
-
-.hero .btn-outline {
-  border-color: #668573;
-  color: white;
-}
-
-.hero-visual {
-  position: relative;
-  min-height: 440px;
-}
-
-.hero-image {
-  height: 440px;
-  border-radius: 180px 180px 18px 18px;
-  background:
-    linear-gradient(0deg, rgba(14,38,24,.24), transparent 55%),
-    url("https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=85")
-    center / cover;
-  box-shadow: 0 25px 60px rgba(0,0,0,.22);
-}
-
-.image-caption {
-  position: absolute;
-  bottom: 22px;
-  left: 22px;
-  right: 22px;
-  padding: 17px 20px;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 12px;
-  background: rgba(19,43,28,.78);
-  backdrop-filter: blur(8px);
-}
-
-.image-caption strong {
-  display: block;
-  font-size: 14px;
-}
-
-.image-caption span {
-  color: #d0dfd2;
-  font-size: 11px;
-}
-
-.hero-note {
-  position: absolute;
-  top: 45px;
-  left: -28px;
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  background: var(--lime);
-  color: var(--green-dark);
-  transform: rotate(-10deg);
-  box-shadow: var(--shadow);
-}
-
-.hero-note strong {
-  font-size: 26px;
-  line-height: 1.2;
-}
-
-.hero-note span {
-  font-size: 10px;
-  font-weight: 800;
-}
-
-/* =========================
-   04. 生态数据栏
-========================= */
-.stats {
-  background: var(--paper);
-  border-bottom: 1px solid var(--border);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 32px 0;
-}
-
-.stat {
-  text-align: center;
-  padding: 8px 15px;
-  border-right: 1px solid var(--border);
-}
-
-.stat:last-child {
-  border: 0;
-}
-
-.stat strong {
-  display: block;
-  color: var(--green);
-  font-size: 31px;
-  line-height: 1.4;
-}
-
-.dark .stat strong {
-  color: var(--lime);
-}
-
-.stat span {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* =========================
-   05. 文章博客区
-========================= */
-.blog-section {
-  background: var(--cream);
-}
-
-.blog-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  margin-bottom: 27px;
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.filter-btn {
-  padding: 8px 15px;
-  border-radius: 100px;
-  background: var(--paper);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-size: 12px;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  background: var(--green);
-  color: white;
-  border-color: var(--green);
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 8px 15px;
-  min-width: 225px;
-}
-
-.search-box input {
-  border: 0;
-  outline: 0;
-  width: 100%;
-  background: transparent;
-  color: var(--text);
-  font-size: 12px;
-}
-
-.article-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 23px;
-}
-
-.article-card {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform .25s, box-shadow .25s;
-}
-
-.article-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
-}
-
-.article-card[hidden] {
-  display: none;
-}
-
-.article-img {
-  height: 225px;
-  position: relative;
-  overflow: hidden;
-  background: var(--green-light);
-}
-
-.article-img img {
-  height: 100%;
-  transition: transform .5s;
-}
-
-.article-card:hover .article-img img {
-  transform: scale(1.06);
-}
-
-.article-img .tag {
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  background: rgba(255,255,255,.94);
-}
-
-.article-content {
-  padding: 22px;
-}
-
-.article-meta {
-  display: flex;
-  gap: 13px;
-  color: var(--muted);
-  font-size: 11px;
-  margin-bottom: 11px;
-}
-
-.article-content h3 {
-  font-size: 19px;
-  line-height: 1.55;
-  margin-bottom: 11px;
-}
-
-.article-content p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
-}
-
-.read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 19px;
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--green);
-}
-
-.dark .read-more {
-  color: var(--lime);
-}
-
-.read-more:hover {
-  gap: 13px;
-}
-
-.no-results {
-  display: none;
-  padding: 40px;
-  text-align: center;
-  color: var(--muted);
-}
-
-/* =========================
-   06. 专题横幅
-========================= */
-.feature-section {
-  padding: 25px 0 80px;
-}
-
-.feature-banner {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  background: #dce8d5;
-  color: #223e2b;
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-.feature-copy {
-  padding: 55px;
-}
-
-.feature-copy .eyebrow {
-  background: #c6dabc;
-}
-
-.feature-copy h2 {
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.35;
-  margin-bottom: 18px;
-}
-
-.feature-copy p {
-  font-size: 14px;
-  color: #536958;
-  margin-bottom: 25px;
-}
-
-.feature-image {
-  min-height: 350px;
-  background:
-    linear-gradient(90deg, rgba(220,232,213,.12), transparent),
-    url("https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=85")
-    center / cover;
-}
-
-/* =========================
-   07. 濒危动物展示
-========================= */
-.species-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.species-card {
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.species-card img {
-  height: 205px;
-  transition: transform .4s;
-}
-
-.species-card:hover img {
-  transform: scale(1.05);
-}
-
-.species-image {
-  overflow: hidden;
-}
-
-.species-info {
-  padding: 18px;
-}
-
-.species-info h3 {
-  font-size: 17px;
-  margin-bottom: 5px;
-}
-
-.species-info p {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.status {
-  display: inline-flex;
-  margin-top: 12px;
-  border-radius: 5px;
-  padding: 4px 8px;
-  background: #f8e7d6;
-  color: #9b5421;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-/* =========================
-   08. 保护行动步骤
-========================= */
-.action-section {
-  background: var(--green-dark);
-  color: white;
-}
-
-.action-section .eyebrow {
-  background: #304f3b;
-  color: var(--lime);
-}
-
-.action-section .section-heading p {
-  color: #b8cbbb;
-}
-
-.action-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.action-card {
-  padding: 30px;
-  background: rgba(255,255,255,.055);
-  border: 1px solid rgba(255,255,255,.13);
-  border-radius: var(--radius);
-  transition: background .2s, transform .2s;
-}
-
-.action-card:hover {
-  background: rgba(255,255,255,.1);
-  transform: translateY(-4px);
-}
-
-.action-icon {
-  width: 55px;
-  height: 55px;
-  display: grid;
-  place-items: center;
-  font-size: 27px;
-  background: #365942;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-
-.action-card h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
-}
-
-.action-card p {
-  font-size: 13px;
-  color: #bed0c1;
-  line-height: 1.9;
-}
-
-/* =========================
-   09. 每周倡议与订阅
-========================= */
-.newsletter {
-  padding: 75px 0;
-}
-
-.newsletter-box {
-  background: var(--green-light);
-  border: 1px solid var(--border);
-  border-radius: 25px;
-  padding: 45px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.newsletter h2 {
-  font-size: 30px;
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-.newsletter p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.subscribe-form {
-  display: flex;
-  gap: 8px;
-  padding: 6px;
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-}
-
-.subscribe-form input {
-  min-width: 0;
-  flex: 1;
-  border: 0;
-  outline: 0;
-  padding: 8px 13px;
-  background: transparent;
-  color: var(--text);
-  font-size: 13px;
-}
-
-.subscribe-form button {
-  border: 0;
-  background: var(--green);
-  color: white;
-  border-radius: 100px;
-  padding: 10px 19px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.form-message {
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--green);
-}
-
-/* =========================
-   10. 页脚
-========================= */
-footer {
-  background: #142b1e;
-  color: #dce9dd;
-  padding: 55px 0 22px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 35px;
-  padding-bottom: 38px;
-}
-
-.footer-brand .logo {
-  color: white;
-  margin-bottom: 17px;
-}
-
-.footer-brand p {
-  color: #a8c0ae;
-  font-size: 12px;
-  max-width: 300px;
-}
-
-.footer-col h4 {
-  font-size: 13px;
-  margin-bottom: 16px;
-  color: var(--lime);
-}
-
-.footer-col a {
-  display: block;
-  color: #b7c8ba;
-  font-size: 12px;
-  margin: 9px 0;
-}
-
-.footer-col a:hover {
-  color: white;
-}
-
-.footer-bottom {
-  border-top: 1px solid #35513e;
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: #91aa98;
-  font-size: 11px;
-}
-
-/* =========================
-   11. 文章弹窗
-========================= */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 500;
-  background: rgba(0,0,0,.68);
-  padding: 20px;
-  overflow-y: auto;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal.open {
-  display: flex;
-}
-
-.modal-panel {
-  position: relative;
-  background: var(--paper);
-  color: var(--text);
-  width: min(720px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 20px;
-  padding: 35px;
-  box-shadow: 0 30px 100px rgba(0,0,0,.25);
-}
-
-.modal-close {
-  position: sticky;
-  float: right;
-  top: 0;
-  border: 1px solid var(--border);
-  background: var(--paper);
-  color: var(--text);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  font-size: 20px;
-}
-
-.modal-panel h2 {
-  font-size: 29px;
-  line-height: 1.4;
-  margin: 24px 0 15px;
-}
-
-.modal-panel p {
-  margin: 13px 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.modal-panel h3 {
-  margin-top: 24px;
-  font-size: 18px;
-}
-
-.modal-panel ul {
-  margin: 12px 0 12px 22px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.back-top {
-  position: fixed;
-  right: 22px;
-  bottom: 23px;
-  z-index: 90;
-  width: 45px;
-  height: 45px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--green);
-  color: white;
-  box-shadow: var(--shadow);
-  font-size: 19px;
-  display: none;
-}
-
-.back-top.show {
-  display: block;
-}
-
-/* =========================
-   12. 响应式适配
-========================= */
-@media (max-width: 950px) {
-  .nav-links {
-    gap: 14px;
+:root{
+  --bg:#f5f7f4;
+  --card:#ffffff;
+  --text:#26352e;
+  --muted:#6c7b72;
+  --primary:#39785c;
+  --primary-light:#e5f1e9;
+  --accent:#e8b56a;
+  --border:#e2e9e3;
+  --shadow:0 8px 28px rgba(35,65,47,.07);
+}
+body.dark{
+  --bg:#17211b;
+  --card:#222e26;
+  --text:#edf4ee;
+  --muted:#afbeb2;
+  --primary:#8dc9a2;
+  --primary-light:#2b4433;
+  --accent:#e8bf7e;
+  --border:#39483d;
+  --shadow:0 8px 28px rgba(0,0,0,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+  "Microsoft YaHei",Arial,sans-serif;
+  line-height:1.8;transition:background .25s,color .25s;
+}
+a{color:var(--primary);text-decoration:none}
+button{font:inherit;cursor:pointer}
+.navbar{
+  position:sticky;top:0;z-index:100;
+  background:var(--card);border-bottom:1px solid var(--border);
+  padding:12px 5%;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;
+}
+.brand{font-size:19px;font-weight:800;white-space:nowrap}
+.brand span{color:var(--primary)}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--primary)}
+.theme-btn,.menu-btn{
+  background:var(--primary-light);color:var(--primary);
+  border:0;border-radius:10px;padding:8px 12px;
+}
+.menu-btn{display:none}
+.hero{
+  min-height:440px;padding:78px 7%;
+  background:linear-gradient(120deg,#204f3a,#39785c 65%,#83a987);
+  color:#fff;display:flex;align-items:center;
+  justify-content:space-between;gap:35px;overflow:hidden;
+}
+.hero-content{max-width:700px}
+.eyebrow{
+  display:inline-block;padding:5px 13px;border-radius:30px;
+  background:rgba(255,255,255,.15);font-size:13px;
+}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.25;margin:22px 0}
+.hero p{font-size:17px;color:#e0eee4;max-width:650px}
+.hero-art{font-size:130px;opacity:.95;filter:drop-shadow(0 10px 15px #153b2c)}
+.btn{
+  display:inline-block;border:0;border-radius:10px;
+  padding:12px 20px;background:var(--accent);
+  color:#24352b;font-weight:700;margin-top:15px;
+}
+.btn:hover{transform:translateY(-2px)}
+.container{max-width:1120px;margin:auto;padding:0 24px}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px;margin-top:-35px;position:relative;
+}
+.stat{
+  background:var(--card);padding:23px;border-radius:15px;
+  box-shadow:var(--shadow);text-align:center;
+}
+.stat strong{display:block;font-size:27px;color:var(--primary)}
+.stat span{font-size:13px;color:var(--muted)}
+.section{padding:65px 0}
+.section-head{max-width:720px;margin-bottom:30px}
+.kicker{
+  font-size:12px;font-weight:800;letter-spacing:2px;
+  color:var(--primary);text-transform:uppercase;
+}
+h2{font-size:clamp(26px,3vw,35px);line-height:1.4;margin:8px 0 15px}
+h3{font-size:19px;line-height:1.5;margin-top:0}
+p{margin:10px 0}
+.muted{color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  padding:25px;background:var(--card);border:1px solid var(--border);
+  border-radius:16px;box-shadow:var(--shadow);
+}
+.card-icon{font-size:30px;margin-bottom:12px}
+.tag{
+  display:inline-block;padding:3px 10px;border-radius:20px;
+  font-size:12px;background:var(--primary-light);color:var(--primary);
+  margin:3px 4px 3px 0;
+}
+.callout{
+  border-left:4px solid var(--primary);
+  background:var(--primary-light);padding:20px 23px;
+  border-radius:0 12px 12px 0;margin:24px 0;
+}
+.callout strong{color:var(--primary)}
+/* 目录 */
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:35px}
+.sidebar{align-self:start;position:sticky;top:90px}
+.side-box{
+  background:var(--card);border:1px solid var(--border);
+  padding:20px;border-radius:14px;
+}
+.side-box a{display:block;padding:8px 0;font-size:14px;color:var(--muted)}
+.side-box a:hover{color:var(--primary);padding-left:5px}
+.content-block{margin-bottom:50px}
+.content-block ul{padding-left:22px}
+.content-block li{margin:10px 0}
+.quote{
+  font-size:18px;font-weight:600;padding:25px;
+  border-radius:14px;background:var(--primary-light);
+  color:var(--text);margin:20px 0;
+}
+.step{
+  display:flex;gap:16px;padding:20px 0;
+  border-bottom:1px solid var(--border);
+}
+.step-number{
+  min-width:42px;height:42px;border-radius:12px;
+  background:var(--primary-light);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-weight:800;
+}
+.compare{width:100%;border-collapse:collapse;margin:20px 0;background:var(--card)}
+.compare th,.compare td{
+  padding:14px;text-align:left;border:1px solid var(--border);vertical-align:top;
+}
+.compare th{background:var(--primary-light);color:var(--primary)}
+.good{color:#38966a;font-weight:600}
+.bad{color:#cc765c;font-weight:600}
+/* 情景切换 */
+.scenario-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.tab{
+  padding:10px 15px;border-radius:9px;border:1px solid var(--border);
+  background:var(--card);color:var(--text);
+}
+.tab.active{background:var(--primary);color:white;border-color:var(--primary)}
+.scenario-panel{
+  padding:25px;border:1px solid var(--border);
+  background:var(--card);border-radius:15px;
+}
+.scenario-panel h3{color:var(--primary)}
+.dialogue{padding:14px 17px;border-radius:10px;margin:12px 0}
+.parent{background:var(--primary-light)}
+.child{background:var(--bg);border:1px solid var(--border)}
+/* 自测 */
+.quiz-question{
+  padding:18px 0;border-bottom:1px solid var(--border);
+}
+.quiz-question p{font-weight:600}
+.quiz-question label{display:block;padding:7px 0;cursor:pointer;color:var(--muted)}
+input[type=radio],input[type=checkbox]{accent-color:var(--primary)}
+.result{
+  display:none;margin-top:20px;padding:22px;border-radius:12px;
+  background:var(--primary-light);
+}
+.progress-track{height:8px;border-radius:10px;background:var(--border);overflow:hidden}
+.progress-fill{height:100%;width:0;background:var(--primary);transition:width .3s}
+.checklist label{
+  display:flex;align-items:flex-start;gap:12px;padding:13px 0;
+  border-bottom:1px solid var(--border);cursor:pointer;
+}
+.checklist input{margin-top:7px}
+.checklist label:has(input:checked) span{text-decoration:line-through;opacity:.6}
+.footer{background:#203d2d;color:#e4eee6;padding:45px 24px;text-align:center}
+.footer p{color:#c2d5c6;font-size:14px}
+.back-top{
+  position:fixed;bottom:25px;right:25px;width:45px;height:45px;
+  border-radius:50%;border:0;background:var(--primary);color:white;
+  box-shadow:var(--shadow);font-size:20px;z-index:50;
+}
+@media(max-width:850px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-links.open{
+    display:flex;position:absolute;top:58px;left:0;right:0;
+    background:var(--card);padding:20px;flex-direction:column;
+    align-items:flex-start;border-bottom:1px solid var(--border);
   }
-
-  .nav-links a {
-    font-size: 12px;
-  }
-
-  .hero-grid {
-    gap: 25px;
-  }
-
-  .article-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .species-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .hero{padding:55px 7%}
+  .hero-art{font-size:80px}
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .side-box{display:flex;gap:15px;overflow:auto;white-space:nowrap}
+  .side-box a{padding:5px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
 }
-
-@media (max-width: 700px) {
-  .section {
-    padding: 60px 0;
-  }
-
-  .nav-inner {
-    min-height: 68px;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 19px;
-  }
-
-  .logo-mark {
-    width: 37px;
-    height: 37px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-basis: 100%;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding-bottom: 12px;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 11px 5px;
-    border-bottom: 1px solid var(--border);
-    font-size: 14px;
-  }
-
-  .nav-actions {
-    margin-left: auto;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    padding-top: 35px;
-    padding-bottom: 45px;
-  }
-
-  .hero-copy {
-    padding: 20px 0 0;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-
-  .hero-visual {
-    min-height: 350px;
-  }
-
-  .hero-image {
-    height: 350px;
-    border-radius: 130px 130px 15px 15px;
-  }
-
-  .hero-note {
-    left: -5px;
-    top: 25px;
-    width: 85px;
-    height: 85px;
-  }
-
-  .hero-note strong {
-    font-size: 20px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px 0;
-  }
-
-  .stat {
-    padding: 16px 8px;
-  }
-
-  .stat:nth-child(2) {
-    border-right: 0;
-  }
-
-  .stat:nth-child(-n+2) {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .blog-toolbar {
-    align-items: stretch;
-  }
-
-  .search-box {
-    width: 100%;
-  }
-
-  .article-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .article-img {
-    height: 235px;
-  }
-
-  .feature-banner {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-copy {
-    padding: 30px 25px;
-  }
-
-  .feature-image {
-    min-height: 250px;
-  }
-
-  .species-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .species-card img {
-    height: 145px;
-  }
-
-  .species-info {
-    padding: 12px;
-  }
-
-  .species-info h3 {
-    font-size: 15px;
-  }
-
-  .action-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .newsletter-box {
-    grid-template-columns: 1fr;
-    padding: 28px 20px;
-    gap: 25px;
-  }
-
-  .newsletter h2 {
-    font-size: 26px;
-  }
-
-  .subscribe-form button {
-    padding: 9px 13px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px 18px;
-  }
-
-  .modal-panel {
-    padding: 22px;
-  }
-}
-
-@media (max-width: 370px) {
-  .species-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .subscribe-form {
-    border-radius: 16px;
-    flex-wrap: wrap;
-  }
-
-  .subscribe-form input {
-    flex-basis: 100%;
-  }
-
-  .subscribe-form button {
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
+@media(max-width:580px){
+  .hero{min-height:390px}
+  .hero-art{display:none}
+  .stats{grid-template-columns:1fr;margin-top:20px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .section{padding:45px 0}
+  .container{padding:0 17px}
+  .card{padding:20px}
+  .compare{font-size:13px}
+  .compare th,.compare td{padding:9px}
 }
 </style>
 </head>
-
 <body>
 
-<!-- 顶部公告 -->
-<div class="topbar">
-  🌿 每一个生命都值得被尊重 · 每一片森林都值得被守护
-</div>
-
-<!-- 导航 -->
 <header class="navbar">
-  <div class="container nav-inner">
-    <a class="logo" href="#home" aria-label="野境首页">
-      <span class="logo-mark">🌿</span>
-      <span>
-        野境
-        <small>WILDLIFE JOURNAL</small>
-      </span>
-    </a>
-
-    <nav aria-label="主导航">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">首页</a></li>
-        <li><a href="#stories">自然日志</a></li>
-        <li><a href="#species">濒危物种</a></li>
-        <li><a href="#actions">保护行动</a></li>
-        <li><a href="#about">关于我们</a></li>
-      </ul>
-    </nav>
-
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeToggle"
-        aria-label="切换深色模式" title="切换深色模式">☾</button>
-      <button class="icon-btn menu-toggle" id="menuToggle"
-        aria-label="打开导航菜单" aria-expanded="false">☰</button>
-    </div>
+  <a class="brand" href="#home">🌱 与成长<span>同行</span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#understand">理解叛逆</a>
+    <a href="#communication">沟通方法</a>
+    <a href="#scenarios">情景案例</a>
+    <a href="#quiz">亲子自测</a>
+    <a href="#action">行动计划</a>
+  </nav>
+  <div style="display:flex;gap:8px">
+    <button class="theme-btn" id="themeBtn" aria-label="切换深色模式">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="打开导航">☰</button>
   </div>
 </header>
 
-<main>
-
-<!-- 首页 -->
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="hero-label">WILDLIFE · NATURE · FUTURE</div>
-
-      <h1>
-        让野生生命<br>
-        <span>自由地生活。</span>
-      </h1>
-
-      <p>
-        地球不只属于人类。森林中的每一次呼吸，海洋里每一次迁徙，
-        都是这个星球生生不息的证明。让我们重新认识自然，
-        保护野生动物，共同创造人与万物和谐共生的未来。
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#stories">探索自然故事 ↗</a>
-        <a class="btn btn-outline" href="#actions">加入保护行动</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-image" role="img"
-        aria-label="非洲野生动物自然摄影"></div>
-
-      <div class="hero-note">
-        <strong>01</strong>
-        <span>PLANET<br>ONE HOME</span>
-      </div>
-
-      <div class="image-caption">
-        <strong>野性之美，不应只存在于照片里。</strong>
-        <span>保护栖息地，让下一代也能看见真实的野生世界。</span>
-      </div>
-    </div>
+<main id="home">
+<section class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">PARENTING · UNDERSTANDING · GROWING</span>
+    <h1>教育叛逆的孩子，<br>先理解，再引导。</h1>
+    <p>孩子的对抗，有时是成长的信号；孩子的沉默，有时是求助的方式。比起一味纠正行为，我们更需要走近他们的内心。</p>
+    <a class="btn" href="#understand">开始了解孩子 →</a>
   </div>
+  <div class="hero-art" aria-hidden="true">🌳</div>
 </section>
 
-<!-- 数据展示 -->
-<section class="stats" aria-label="全球生物多样性概览">
-  <div class="container stats-grid">
-    <div class="stat">
-      <strong>∞</strong>
-      <span>值得探索的自然奥秘</span>
-    </div>
-    <div class="stat">
-      <strong>1</strong>
-      <span>我们共同拥有的地球</span>
-    </div>
-    <div class="stat">
-      <strong>100%</strong>
-      <span>每个人都能参与保护</span>
-    </div>
-    <div class="stat">
-      <strong>NOW</strong>
-      <span>行动，从现在开始</span>
-    </div>
-  </div>
-</section>
-
-<!-- 文章列表 -->
-<section class="section blog-section" id="stories">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">FIELD NOTES / 自然观察</span>
-      <h2>来自野外的故事</h2>
-      <p>
-        走进森林、湿地、草原与海洋。从科学观察到保护实践，
-        了解野生动物面临的挑战，以及我们可以做出的改变。
-      </p>
-    </div>
-
-    <div class="blog-toolbar">
-      <div class="filters" aria-label="文章分类">
-        <button class="filter-btn active" data-filter="all">全部文章</button>
-        <button class="filter-btn" data-filter="forest">森林生态</button>
-        <button class="filter-btn" data-filter="ocean">海洋保护</button>
-        <button class="filter-btn" data-filter="species">物种守护</button>
-        <button class="filter-btn" data-filter="action">绿色行动</button>
-      </div>
-
-      <label class="search-box">
-        <span aria-hidden="true">⌕</span>
-        <input type="search" id="articleSearch"
-          placeholder="搜索动物、森林、保护……"
-          aria-label="搜索文章">
-      </label>
-    </div>
-
-    <div class="article-grid" id="articleGrid">
-
-      <article class="article-card"
-        data-category="forest"
-        data-search="森林 栖息地 老虎 生物多样性 生态系统">
-        <div class="article-img">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80"
-            alt="森林中的野生老虎">
-          <span class="tag">森林生态</span>
-        </div>
-        <div class="article-content">
-          <div class="article-meta">
-            <span>自然与生态</span><span>阅读约 5 分钟</span>
-          </div>
-          <h3>森林不仅是树木，更是无数生命的家园</h3>
-          <p>
-            从大型食肉动物到土壤中的微生物，森林通过复杂的食物网
-            维持生态平衡。保护森林，就是保护一整套生命支持系统。
-          </p>
-          <button class="read-more article-open"
-            data-article="forest-story">阅读全文 ↗</button>
-        </div>
-      </article>
-
-      <article class="article-card"
-        data-category="ocean"
-        data-search="海洋 海龟 塑料污染 海洋垃圾 环境保护">
-        <div class="article-img">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80"
-            alt="清澈海洋与海岸环境">
-          <span class="tag">海洋保护</span>
-        </div>
-        <div class="article-content">
-          <div class="article-meta">
-            <span>蓝色星球</span><span>阅读约 4 分钟</span>
-          </div>
-          <h3>塑料垃圾的终点，可能是海洋动物的餐桌</h3>
-          <p>
-            一次性塑料可能通过河流进入海洋，并在环境中长期残留。
-            减少不必要的塑料使用，是每个人都可以开始的改变。
-          </p>
-          <button class="read-more article-open"
-            data-article="ocean-story">阅读全文 ↗</button>
-        </div>
-      </article>
-
-      <article class="article-card"
-        data-category="species"
-        data-search="大熊猫 竹林 中国 濒危物种 栖息地保护">
-        <div class="article-img">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80"
-            alt="大熊猫在竹林中">
-          <span class="tag">物种守护</span>
-        </div>
-        <div class="article-content">
-          <div class="article-meta">
-            <span>中国野生动物</span><span>阅读约 6 分钟</span>
-          </div>
-          <h3>大熊猫保护：从单一物种走向生态系统保护</h3>
-          <p>
-            保护大熊猫不仅是守护一种动物，也意味着保护竹林、
-            山地森林以及与之共享栖息地的其他野生生物。
-          </p>
-          <button class="read-more article-open"
-            data-article="panda-story">阅读全文 ↗</button>
-        </div>
-      </article>
-
-      <article class="article-card"
-        data-category="forest"
-        data-search="候鸟 湿地 迁徙 鸟类 自然保护区">
-        <div class="article-img">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=800&q=80"
-            alt="自然环境中的野生鸟类">
-          <span class="tag">森林生态</span>
-        </div>
-        <div class="article-content">
-          <div class="article-meta">
-            <span>迁徙与栖息地</span><span>阅读约 4 分钟</span>
-          </div>
-          <h3>候鸟迁徙的路线，需要整片大陆的守护</h3>
-          <p>
-            对候鸟而言，繁殖地、停歇地和越冬地共同构成一条生命走廊。
-            任何关键湿地的消失，都可能影响漫长旅程。
-          </p>
-          <button class="read-more article-open"
-            data-article="bird-story">阅读全文 ↗</button>
-        </div>
-      </article>
-
-      <article class="article-card"
-        data-category="ocean"
-        data-search="鲸鱼 鲸类 海洋生态 船舶噪声 海洋生物">
-        <div class="article-img">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=800&q=80"
-            alt="海洋中的鲸类">
-          <span class="tag">海洋保护</span>
-        </div>
-        <div class="article-content">
-          <div class="article-meta">
-            <span>深蓝观察</span><span>阅读约 5 分钟</span>
-          </div>
-          <h3>深海巨人：鲸鱼与海洋生态的微妙联系</h3>
-          <p>
-            鲸类通过迁徙、摄食和营养物质循环参与海洋生态过程。
-            减少海洋污染、降低碰撞风险，有助于它们安全生存。
-          </p>
-          <button class="read-more article-open"
-            data-article="whale-story">阅读全文 ↗</button>
-        </div>
-      </article>
-
-      <article class="article-card"
-        data-category="action"
-        data-search="志愿者 公民科学 生态摄影 观鸟 保护行动">
-        <div class="article-img">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
-            alt="阳光穿过绿色森林">
-          <span class="tag">绿色行动</span>
-        </div>
-        <div class="article-content">
-          <div class="article-meta">
-            <span>行动指南</span><span>阅读约 3 分钟</span>
-          </div>
-          <h3>普通人如何参与野生动物保护？</h3>
-          <p>
-            从减少塑料垃圾、尊重野生动物，到支持科学保护项目，
-            日常选择可以汇聚成推动环境改善的力量。
-          </p>
-          <button class="read-more article-open"
-            data-article="action-story">阅读全文 ↗</button>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="no-results" id="noResults">
-      没有找到匹配的文章。试试其他关键词吧。
-    </div>
-  </div>
-</section>
-
-<!-- 主题横幅 -->
-<section class="feature-section">
-  <div class="container">
-    <div class="feature-banner">
-      <div class="feature-copy">
-        <span class="eyebrow">A SHARED PLANET</span>
-        <h2>保护动物，<br>也是保护人类自己的未来。</h2>
-        <p>
-          清洁的水源、健康的森林、充满生命的海洋，
-          都与人类的生活紧密相连。生物多样性并非遥远的科学概念，
-          而是支撑我们日常生活的重要基础。
-        </p>
-        <a class="btn btn-primary" href="#actions">从身边开始改变 ↗</a>
-      </div>
-      <div class="feature-image"
-        role="img" aria-label="自然环境中的野生动物"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 濒危物种 -->
-<section class="section" id="species">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">SPECIES SPOTLIGHT</span>
-      <h2>认识那些需要我们关注的生命</h2>
-      <p>
-        每一个物种都有其独特的生态角色。以下是一些具有代表性的
-        野生动物，它们面临的威胁与保护需求各不相同。
-      </p>
-    </div>
-
-    <div class="species-grid">
-      <article class="species-card">
-        <div class="species-image">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=600&q=80"
-            alt="大熊猫">
-        </div>
-        <div class="species-info">
-          <h3>大熊猫</h3>
-          <p>中国山地森林 · 栖息地保护</p>
-          <span class="status">保护成果值得持续巩固</span>
-        </div>
-      </article>
-
-      <article class="species-card">
-        <div class="species-image">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=600&q=80"
-            alt="非洲野生大型哺乳动物">
-        </div>
-        <div class="species-info">
-          <h3>非洲象</h3>
-          <p>非洲草原与森林 · 反盗猎保护</p>
-          <span class="status">关注栖息地与非法贸易</span>
-        </div>
-      </article>
-
-      <article class="species-card">
-        <div class="species-image">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80"
-            alt="野生虎">
-        </div>
-        <div class="species-info">
-          <h3>野生虎</h3>
-          <p>亚洲森林 · 生态廊道保护</p>
-          <span class="status">关注栖息地破碎化</span>
-        </div>
-      </article>
-
-      <article class="species-card">
-        <div class="species-image">
-          <img loading="lazy"
-            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80"
-            alt="海洋与海岸生态环境">
-        </div>
-        <div class="species-info">
-          <h3>海龟</h3>
-          <p>热带与亚热带海域 · 海洋保护</p>
-          <span class="status">关注误捕与海洋垃圾</span>
-        </div>
-      </article>
-    </div>
-
-    <p style="color:var(--muted);font-size:11px;margin-top:20px">
-      注：保护状态可能随评估标准、地区种群和最新研究而变化。
-      以上卡片侧重介绍保护议题，并非实时濒危等级数据库。
-    </p>
-  </div>
-</section>
-
-<!-- 保护行动 -->
-<section class="section action-section" id="actions">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow">SMALL STEPS, REAL CHANGE</span>
-      <h2>让保护行动融入日常生活</h2>
-      <p>
-        保护野生动物并不意味着每个人都要成为科学家。
-        更重要的是了解问题、作出负责任的选择，并将正确的理念传递出去。
-      </p>
-    </div>
-
-    <div class="action-grid">
-      <article class="action-card">
-        <div class="action-icon">🌳</div>
-        <h3>守护自然栖息地</h3>
-        <p>
-          尊重自然保护区的管理规定，减少对野生动物的惊扰，
-          不随意采摘植物或破坏巢穴，支持森林与湿地修复。
-        </p>
-      </article>
-
-      <article class="action-card">
-        <div class="action-icon">♻️</div>
-        <h3>减少环境污染</h3>
-        <p>
-          优先使用可重复利用的用品，妥善处理垃圾，
-          减少一次性塑料消费，避免废弃物进入河流和海洋。
-        </p>
-      </article>
-
-      <article class="action-card">
-        <div class="action-icon">🦋</div>
-        <h3>拒绝非法野生动物贸易</h3>
-        <p>
-          不购买来源不明的野生动物制品，不参与非法捕猎，
-          发现涉嫌违法活动时，通过当地主管部门的正规渠道反映。
-        </p>
-      </article>
-
-      <article class="action-card">
-        <div class="action-icon">📷</div>
-        <h3>文明观察与摄影</h3>
-        <p>
-          保持安全距离，不追逐、不投喂、不使用不当方式引诱动物，
-          也不要公开可能导致敏感物种遭到捕捉的精确位置。
-        </p>
-      </article>
-
-      <article class="action-card">
-        <div class="action-icon">📚</div>
-        <h3>传播科学知识</h3>
-        <p>
-          学习识别可靠的科学信息，分享经过核实的保护知识，
-          鼓励家庭、学校和社区开展自然教育活动。
-        </p>
-      </article>
-
-      <article class="action-card">
-        <div class="action-icon">🤝</div>
-        <h3>支持专业保护项目</h3>
-        <p>
-          根据自身情况参与正规机构的志愿服务或公益项目，
-          关注资金透明、科学评估和尊重当地社区的保护实践。
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 订阅 -->
-<section class="newsletter" id="about">
-  <div class="container">
-    <div class="newsletter-box">
-      <div>
-        <span class="eyebrow">LET NATURE INSPIRE YOU</span>
-        <h2>让自然的声音，<br>每周抵达你的身边。</h2>
-        <p>
-          这里是一份关于野生动物、生态保护与绿色生活的阅读邀请。
-          留下你的邮箱，体验本地演示订阅表单。
-        </p>
-      </div>
-
-      <div>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" id="emailInput"
-            placeholder="请输入你的电子邮箱"
-            aria-label="电子邮箱地址" required>
-          <button type="submit">加入我们 ↗</button>
-        </form>
-        <div class="form-message" id="formMessage" aria-live="polite">
-          🌱 珍惜每一个生命，从关注自然开始。
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- 页脚 -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="logo" href="#home">
-          <span class="logo-mark">🌿</span>
-          <span>野境<small>WILDLIFE JOURNAL</small></span>
-        </a>
-        <p>
-          用文字记录自然，用知识理解生命，用行动守护地球。
-          希望这里能成为你探索野生世界的一扇窗。
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4>探索内容</h4>
-        <a href="#stories">自然观察</a>
-        <a href="#species">濒危物种</a>
-        <a href="#actions">保护行动</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>保护理念</h4>
-        <a href="#actions">栖息地保护</a>
-        <a href="#actions">减少塑料污染</a>
-        <a href="#actions">文明观赏动物</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>了解更多</h4>
-        <a href="https://www.worldwildlife.org/"
-          target="_blank" rel="noopener noreferrer">世界自然基金会 WWF ↗</a>
-        <a href="https://www.iucnredlist.org/"
-          target="_blank" rel="noopener noreferrer">IUCN 红色名录 ↗</a>
-        <a href="https://www.cites.org/"
-          target="_blank" rel="noopener noreferrer">CITES 公约 ↗</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> 野境 Wildlife Journal. All rights reserved.</span>
-      <span>以尊重生命为起点，以生态共生为方向。</span>
-    </div>
-  </div>
-</footer>
-
-<!-- 返回顶部 -->
-<button class="back-top" id="backTop"
-  aria-label="返回页面顶部" title="返回顶部">↑</button>
-
-<!-- 文章详情弹窗 -->
-<div class="modal" id="articleModal"
-  role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-panel">
-    <button class="modal-close" id="modalClose"
-      aria-label="关闭文章">×</button>
-    <span class="eyebrow">WILDLIFE JOURNAL / 深度阅读</span>
-    <div id="modalContent"></div>
+<div class="container">
+  <div class="stats">
+    <div class="stat"><strong>倾听</strong><span>让孩子感到被理解</span></div>
+    <div class="stat"><strong>尊重</strong><span>给成长留出空间</span></div>
+    <div class="stat"><strong>边界</strong><span>在自由中建立规则</span></div>
   </div>
 </div>
 
+<section class="section" id="understand">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">01 · Understand</span>
+    <h2>先理解：孩子为什么越来越难沟通？</h2>
+    <p class="muted">所谓“叛逆”，可能包含独立意识的发展、情绪调节的困难、亲子关系的紧张，也可能是孩子正在面对一些我们尚未察觉的问题。</p>
+  </div>
+
+  <div class="grid-3">
+    <article class="card">
+      <div class="card-icon">🧭</div>
+      <h3>渴望自主</h3>
+      <p>孩子开始希望自己决定穿什么、交什么朋友、如何安排时间。当家长事事代劳时，孩子可能用反抗来争取决定权。</p>
+      <span class="tag">成长需求</span>
+      <span class="tag">自主意识</span>
+    </article>
+    <article class="card">
+      <div class="card-icon">🌧️</div>
+      <h3>情绪不会表达</h3>
+      <p>愤怒、顶嘴、摔门，有时是压力、挫败、委屈或无助的外在表现。孩子未必能准确说出自己为什么难受。</p>
+      <span class="tag">情绪管理</span>
+      <span class="tag">表达困难</span>
+    </article>
+    <article class="card">
+      <div class="card-icon">🪞</div>
+      <h3>需要被尊重</h3>
+      <p>当孩子总是被批评、比较或否定时，可能逐渐认为家长不理解自己，于是减少交流，甚至主动对抗。</p>
+      <span class="tag">自尊需求</span>
+      <span class="tag">关系修复</span>
+    </article>
+    <article class="card">
+      <div class="card-icon">📚</div>
+      <h3>学习压力过大</h3>
+      <p>成绩下降、拖延、厌学可能与压力、睡眠不足、学习困难或缺少成就感有关，不能简单归结为懒惰。</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">👥</div>
+      <h3>同伴关系变化</h3>
+      <p>朋友、校园关系和网络社交对青少年影响很大。孩子可能因为担心被指责而隐藏真实情况。</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">🏠</div>
+      <h3>家庭互动模式</h3>
+      <p>频繁争吵、父母教育方式不一致、只关注结果不关注感受，都可能让亲子双方陷入“越管越反抗”的循环。</p>
+    </article>
+  </div>
+
+  <div class="callout">
+    <strong>重要提醒：</strong>
+    不是所有反抗都意味着心理问题，也不是所有问题都只是叛逆。先观察行为出现的时间、频率、持续多久，以及是否影响学习、睡眠、社交和日常生活。
+  </div>
+
+  <h3 style="margin-top:35px">不同年龄，需要不同的引导方式</h3>
+  <div class="grid-3">
+    <article class="card">
+      <span class="tag">约 6—11 岁</span>
+      <h3>建立安全感与规则</h3>
+      <p>用清晰、具体、稳定的规则帮助孩子理解行为后果。少讲大道理，多示范和陪伴。</p>
+    </article>
+    <article class="card">
+      <span class="tag">约 12—15 岁</span>
+      <h3>尊重自主与情绪</h3>
+      <p>允许合理的意见不同，和孩子共同商量规则。争执时先降温，再讨论解决办法。</p>
+    </article>
+    <article class="card">
+      <span class="tag">约 16—18 岁</span>
+      <h3>练习选择与担当</h3>
+      <p>逐步放手，让孩子参与重要决定，承担与年龄相符的后果，同时提供必要支持。</p>
+    </article>
+  </div>
+  <p class="muted" style="font-size:13px">以上年龄段仅供参考，孩子的发展节奏各不相同，具体方式应根据成熟程度和实际情况调整。</p>
+</div>
+</section>
+
+<section class="section" id="communication" style="background:var(--card)">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">02 · Communication</span>
+    <h2>六种更有效的沟通方法</h2>
+    <p class="muted">沟通的目标不是让孩子马上认输，而是让双方能把问题说清楚，并找到可以执行的办法。</p>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-box">
+        <strong>本节导航</strong>
+        <a href="#method1">01 先听，再说</a>
+        <a href="#method2">02 描述行为，不贴标签</a>
+        <a href="#method3">03 给出有限选择</a>
+        <a href="#method4">04 规则共同制定</a>
+        <a href="#method5">05 冷静后再沟通</a>
+        <a href="#method6">06 关注积极改变</a>
+      </div>
+    </aside>
+
+    <div>
+      <div class="content-block" id="method1">
+        <h3>01. 先听，再说：让孩子把话讲完</h3>
+        <p>当孩子抱怨学校、批评父母或表达不同意见时，先不要急着反驳。试着听清他的感受和真实诉求。</p>
+        <div class="quote">“我想听听你的想法。你可以先说完，我不会急着打断你。”</div>
+        <p><strong>可以这样做：</strong></p>
+        <ul>
+          <li>放下手机，保持自然的眼神交流。</li>
+          <li>用自己的话复述孩子的意思，确认是否理解正确。</li>
+          <li>先回应情绪，再讨论事实与解决办法。</li>
+        </ul>
+      </div>
+
+      <div class="content-block" id="method2">
+        <h3>02. 描述行为，不给孩子贴标签</h3>
+        <p>“你怎么这么不懂事”“你就是懒”容易让孩子把注意力放在自我防御上，而不是具体问题上。</p>
+        <table class="compare">
+          <thead><tr><th>尽量避免</th><th>尝试换成</th></tr></thead>
+          <tbody>
+            <tr><td class="bad">你就是懒，什么都不做。</td><td class="good">这周有几项作业还没完成，我们一起看看是什么原因。</td></tr>
+            <tr><td class="bad">你从来不听我的话。</td><td class="good">刚才我说话时你离开了，我有些担心，我们能聊聊吗？</td></tr>
+            <tr><td class="bad">你看别人家的孩子多优秀。</td><td class="good">我更想知道你最近遇到什么困难，以及你希望怎样改进。</td></tr>
+            <tr><td class="bad">你再这样就别想玩手机。</td><td class="good">我们需要一起商量手机使用时间，并明确违反约定后的处理办法。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="content-block" id="method3">
+        <h3>03. 给出有限选择，而不是事事命令</h3>
+        <p>适当的选择权能帮助孩子练习决策，也能减少无意义的权力争夺。</p>
+        <div class="callout">
+          <strong>例如：</strong>
+          “今天的阅读需要完成，你想吃饭前读二十分钟，还是吃饭后读二十分钟？”
+        </div>
+        <p>选择必须真实、合理，而且不能把重要的安全底线当作讨价还价的筹码。不要用看似选择、实际上无法拒绝的方式操纵孩子。</p>
+      </div>
+
+      <div class="content-block" id="method4">
+        <h3>04. 规则共同制定，后果提前说清楚</h3>
+        <p>家庭规则不应只靠家长单方面宣布。可以和孩子讨论作息、手机、家务、学习安排及违反约定后的处理方式。</p>
+        <ul>
+          <li>规则要具体：比如约定晚上某个时间停止娱乐，而不是“以后少玩手机”。</li>
+          <li>规则要合理：符合年龄、学习负担和实际生活情况。</li>
+          <li>后果要相关：没按约定完成家务，就先补做家务，而不是取消所有社交活动。</li>
+          <li>父母也要守约：规则修改时说明原因，不临时随意加码。</li>
+        </ul>
+      </div>
+
+      <div class="content-block" id="method5">
+        <h3>05. 冲突升级时，先暂停</h3>
+        <p>如果双方已经开始大喊、讽刺或说出伤人的话，继续争论通常很难产生建设性结果。</p>
+        <div class="quote">“我们现在都有些激动。我想先休息二十分钟，等大家平静下来，再把这件事谈完。”</div>
+        <p>暂停不是冷暴力，也不是故意不理孩子。需要明确告诉孩子何时回来继续谈，并且兑现承诺。如果存在暴力或人身威胁，应优先确保安全，而不是要求双方立即和解。</p>
+      </div>
+
+      <div class="content-block" id="method6">
+        <h3>06. 看见努力，而不只盯着错误</h3>
+        <p>具体的积极反馈，比笼统的“你真棒”更能帮助孩子了解哪些行为值得继续。</p>
+        <ul>
+          <li>“你刚才虽然不赞同我，但还是把自己的想法说清楚了。”</li>
+          <li>“今天你按约定放下手机了，我看到了你的努力。”</li>
+          <li>“这次结果不理想，但你愿意复盘原因，我们可以继续改进。”</li>
+        </ul>
+        <p>认可不等于放弃原则。既可以肯定孩子的感受，也可以对不尊重他人、破坏物品或违反安全规则的行为设定边界。</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="scenarios">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">03 · Real Situations</span>
+    <h2>遇到这些情况，家长该怎么说？</h2>
+    <p class="muted">选择你正在面对的情景，看看怎样回应更有助于解决问题。</p>
+  </div>
+
+  <div class="scenario-tabs">
+    <button class="tab active" data-scenario="phone">沉迷手机</button>
+    <button class="tab" data-scenario="study">厌学拖延</button>
+    <button class="tab" data-scenario="talk">顶嘴争吵</button>
+    <button class="tab" data-scenario="door">拒绝交流</button>
+  </div>
+
+  <div class="scenario-panel" id="scenarioPanel" aria-live="polite">
+    <span class="tag">情景一 · 手机使用</span>
+    <h3>孩子一放学就玩手机，提醒后还发脾气</h3>
+    <div class="dialogue child"><strong>孩子：</strong>“烦死了！你就知道管我！”</div>
+    <div class="dialogue parent"><strong>家长可以说：</strong>“我知道你想放松，我也不想每天都因为手机吵架。我们先看看你的作息和需要完成的事情，再一起定一个双方都能接受的使用计划。”</div>
+    <h3>接下来怎么做？</h3>
+    <ul>
+      <li>了解孩子使用手机的主要目的：社交、游戏、逃避压力，还是单纯放松。</li>
+      <li>共同确定学习、睡眠和娱乐的基本安排，规则适用于家庭约定的情形。</li>
+      <li>用稳定执行的约定替代突然没收、反复威胁和偷偷检查。</li>
+    </ul>
+    <p class="muted">如果使用行为已严重影响睡眠、学习、人际关系，且孩子多次无法控制，应考虑寻求专业帮助。</p>
+  </div>
+
+  <div class="callout">
+    <strong>沟通小公式：</strong>
+    描述事实 → 表达感受 → 了解需求 → 共同找办法。
+    <br>先解决关系中的对抗，再一起解决具体问题。
+  </div>
+
+  <div class="grid-2" style="margin-top:25px">
+    <article class="card">
+      <h3>📌 场景：孩子成绩下降</h3>
+      <p><strong>不建议：</strong>“你再不努力，这辈子就完了。”</p>
+      <p><strong>可以尝试：</strong>“我注意到你最近成绩有变化。你觉得最难的部分是什么？是没听懂、压力大，还是有别的事情影响了你？”</p>
+      <p class="muted">目标：找到原因，而不是制造更多恐惧。</p>
+    </article>
+    <article class="card">
+      <h3>📌 场景：孩子说父母不理解自己</h3>
+      <p><strong>不建议：</strong>“我做这一切都是为了你，你还不知足。”</p>
+      <p><strong>可以尝试：</strong>“听起来你觉得我没有真正理解你的感受。你愿意告诉我，哪件事让你最难受吗？”</p>
+      <p class="muted">目标：理解孩子的体验，而不是急于证明自己正确。</p>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" style="background:var(--card)" id="mistakes">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">04 · Avoid These</span>
+    <h2>这五种教育方式，可能让冲突越来越严重</h2>
+  </div>
+  <div class="grid-2">
+    <article class="card">
+      <h3>❌ 当众羞辱与反复比较</h3>
+      <p>把错误上升为人格问题，可能损害孩子的自尊，让孩子更加防御或退缩。</p>
+      <p><strong>替代方法：</strong>私下讨论具体行为，聚焦改进办法。</p>
+    </article>
+    <article class="card">
+      <h3>❌ 只讲道理，不听感受</h3>
+      <p>孩子情绪激动时，长篇说教往往难以被听进去。</p>
+      <p><strong>替代方法：</strong>先回应情绪，待双方冷静后再分析。</p>
+    </article>
+    <article class="card">
+      <h3>❌ 一味控制所有决定</h3>
+      <p>事无巨细地安排生活，可能让孩子缺乏自主练习的机会。</p>
+      <p><strong>替代方法：</strong>区分安全底线与可以协商的事项。</p>
+    </article>
+    <article class="card">
+      <h3>❌ 规则反复变化</h3>
+      <p>今天可以、明天不行，容易让孩子觉得规则取决于父母心情。</p>
+      <p><strong>替代方法：</strong>共同制定清晰规则，调整时解释原因。</p>
+    </article>
+    <article class="card">
+      <h3>❌ 用冷暴力逼孩子认错</h3>
+      <p>长时间拒绝回应、撤回关爱，可能加深不安全感与隔阂。</p>
+      <p><strong>替代方法：</strong>明确表达需要暂停多久，并承诺回来沟通。</p>
+    </article>
+    <article class="card">
+      <h3>❌ 认为所有问题都是叛逆</h3>
+      <p>持续的情绪低落、校园欺凌、睡眠问题或学习困难，可能需要进一步评估。</p>
+      <p><strong>替代方法：</strong>耐心了解背景，必要时联系学校或专业人员。</p>
+    </article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="quiz">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">05 · Parent Reflection</span>
+    <h2>亲子关系小自测</h2>
+    <p class="muted">下面的题目帮助家长反思近期的互动习惯，不是心理诊断，也不能单凭分数判断亲子关系好坏。</p>
+  </div>
+
+  <div class="card">
+    <div class="progress-track"><div class="progress-fill" id="quizProgress"></div></div>
+    <p class="muted" id="progressText">已完成 0 / 8 题</p>
+    <form id="quizForm">
+      <div id="quizQuestions"></div>
+      <button class="btn" type="submit">查看自我反思建议</button>
+      <button class="btn" type="reset" style="background:var(--border);margin-left:8px">重新填写</button>
+    </form>
+    <div class="result" id="quizResult" aria-live="polite"></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="action" style="background:var(--card)">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">06 · Take Action</span>
+    <h2>从今天开始：七天亲子关系改善计划</h2>
+    <p class="muted">不必试图一天解决所有问题。每天做一件小事，坚持比完美更重要。</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card checklist" id="dailyChecklist">
+      <h3>本周行动清单</h3>
+      <label><input type="checkbox"><span><strong>第 1 天：</strong>认真听孩子说十分钟，不打断、不急于纠正。</span></label>
+      <label><input type="checkbox"><span><strong>第 2 天：</strong>发现一件孩子做得不错的事，并具体表达认可。</span></label>
+      <label><input type="checkbox"><span><strong>第 3 天：</strong>和孩子一起做一件不涉及学习成绩的活动。</span></label>
+      <label><input type="checkbox"><span><strong>第 4 天：</strong>挑选一个长期争执的问题，先听孩子的方案。</span></label>
+      <label><input type="checkbox"><span><strong>第 5 天：</strong>与孩子商量一条具体、合理、可执行的家庭规则。</span></label>
+      <label><input type="checkbox"><span><strong>第 6 天：</strong>回顾最近一次冲突，找出双方可以改进的地方。</span></label>
+      <label><input type="checkbox"><span><strong>第 7 天：</strong>问孩子：“最近有什么事，是你希望我做得不一样的？”</span></label>
+      <p class="muted" id="checkProgress">已完成 0 / 7 项</p>
+    </div>
+
+    <div class="card">
+      <h3>📝 写下你的沟通计划</h3>
+      <p class="muted">选一个你最想改善的问题，写下下一次准备怎样回应。</p>
+      <label for="problem">目前最困扰你的问题</label>
+      <textarea id="problem" rows="3" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);margin:8px 0 15px" placeholder="例如：孩子一提到学习就发脾气……"></textarea>
+      <label for="plan">我准备尝试的做法</label>
+      <textarea id="plan" rows="4" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);margin:8px 0 15px" placeholder="例如：今晚先不谈成绩，听听孩子最近的感受……"></textarea>
+      <button class="btn" id="savePlan" type="button">生成我的行动卡</button>
+      <button class="btn" id="copyPlan" type="button" style="background:var(--border);margin-left:5px">复制内容</button>
+      <div id="planResult" class="callout" style="display:none;overflow-wrap:anywhere"></div>
+      <p class="muted" style="font-size:12px">内容仅在当前页面中处理，不会自动上传。刷新页面后填写内容不会保留。</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-head">
+    <span class="kicker">07 · When To Seek Help</span>
+    <h2>什么时候需要寻求专业帮助？</h2>
+    <p>如果孩子的问题持续加重，已经明显影响日常生活，不要只依赖家庭教育技巧。</p>
+  </div>
+  <div class="grid-2">
+    <article class="card">
+      <h3>值得认真关注的信号</h3>
+      <ul>
+        <li>持续情绪低落、明显焦虑或易怒。</li>
+        <li>长期失眠、食欲显著改变或精力明显下降。</li>
+        <li>突然拒绝上学、严重社交退缩或学习功能明显下降。</li>
+        <li>反复出现失控的攻击行为、自伤行为或其他危险行为。</li>
+        <li>孩子透露遭受欺凌、威胁、虐待或其他伤害。</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>家长可以采取的行动</h3>
+      <ul>
+        <li>选择平静的时间，表达关心，不急着指责。</li>
+        <li>联系学校心理老师、儿科医生或有资质的心理健康专业人员。</li>
+        <li>如果存在自伤、自杀风险或现实中的人身危险，立即确保孩子处于安全环境，寻求当地紧急服务或危机干预支持。</li>
+        <li>不要承诺对严重危险绝对保密，也不要独自承担超出能力范围的风险。</li>
+      </ul>
+    </article>
+  </div>
+  <div class="callout">
+    <strong>请记住：</strong>
+    寻求帮助不代表父母失败。及时发现问题、保护孩子安全、与专业人员合作，本身就是负责任的养育行为。
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+  <h2>让爱成为孩子成长的底气</h2>
+  <p>理解不等于纵容，规则不等于控制，尊重也不意味着放弃责任。</p>
+  <p>愿每一次沟通，都成为彼此靠近的一小步。</p>
+  <p style="margin-top:25px">© 2026 与成长同行 · 家庭教育与亲子沟通指南</p>
+  <p>本文提供一般性家庭教育参考，不能替代个体化的医疗或心理咨询。</p>
+  <a href="#home" style="color:#e8bf7e">返回顶部 ↑</a>
+</footer>
+
+<button class="back-top" id="backTop" title="返回顶部" aria-label="返回顶部">↑</button>
+
 <script>
-/* =========================
-   01. 移动端导航菜单
-========================= */
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+/* 导航菜单 */
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "×" : "☰";
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
 });
 
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
-  });
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-/* =========================
-   02. 深色模式
-========================= */
-const themeToggle = document.getElementById("themeToggle");
-
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  const dark = document.body.classList.contains("dark");
-  themeToggle.textContent = dark ? "☀" : "☾";
-  themeToggle.setAttribute(
-    "aria-label",
-    dark ? "切换浅色模式" : "切换深色模式"
-  );
+/* 深色模式 */
+const themeBtn = document.getElementById('themeBtn');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  themeBtn.textContent = isDark ? '☀️' : '🌙';
+  themeBtn.setAttribute('aria-label', isDark ? '切换浅色模式' : '切换深色模式');
 });
 
-/* =========================
-   03. 文章搜索与分类过滤
-========================= */
-const filterButtons = document.querySelectorAll(".filter-btn");
-const articles = document.querySelectorAll(".article-card");
-const articleSearch = document.getElementById("articleSearch");
-const noResults = document.getElementById("noResults");
-
-let currentFilter = "all";
-
-function filterArticles() {
-  const keyword = articleSearch.value.trim().toLowerCase();
-  let visibleCount = 0;
-
-  articles.forEach(article => {
-    const category = article.dataset.category;
-    const searchText = (
-      article.dataset.search + " " + article.innerText
-    ).toLowerCase();
-
-    const matchesCategory =
-      currentFilter === "all" || category === currentFilter;
-    const matchesKeyword = searchText.includes(keyword);
-    const visible = matchesCategory && matchesKeyword;
-
-    article.hidden = !visible;
-    if (visible) visibleCount++;
-  });
-
-  noResults.style.display = visibleCount === 0 ? "block" : "none";
-}
-
-filterButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach(item => item.classList.remove("active"));
-    button.classList.add("active");
-    currentFilter = button.dataset.filter;
-    filterArticles();
-  });
+/* 返回顶部 */
+document.getElementById('backTop').addEventListener('click', () => {
+  window.scrollTo({top:0, behavior:'smooth'});
 });
 
-articleSearch.addEventListener("input", filterArticles);
-
-/* =========================
-   04. 文章内容数据
-========================= */
-const articleData = {
-  "forest-story": {
-    title: "森林不仅是树木，更是无数生命的家园",
-    intro: "森林是由植物、动物、真菌、微生物、水和土壤共同构成的复杂生态系统。每个成员都在其中发挥着作用。",
-    sections: [
-      ["森林为何如此重要？",
-       "森林为大量陆生物种提供食物、庇护和繁殖场所。树木吸收并储存碳，植被帮助保持土壤，森林水文过程也与区域水循环密切相关。"],
-      ["栖息地破碎化意味着什么？",
-       "当连续的森林被道路、建设用地或其他开发活动分割时，动物迁徙、觅食和繁殖可能受到阻碍。孤立的小种群还可能面临遗传多样性下降等风险。"],
-      ["我们可以做些什么？",
-       "支持经过科学评估的森林保护与修复项目；尊重保护区规定；选购来源合法、可追溯的产品；在户外活动时不破坏植被、不遗留垃圾。"]
-    ]
+/* 情景案例切换 */
+const scenarios = {
+  phone: {
+    tag:'情景一 · 手机使用',
+    title:'孩子一放学就玩手机，提醒后还发脾气',
+    child:'“烦死了！你就知道管我！”',
+    parent:'“我知道你想放松，我也不想每天都因为手机吵架。我们先看看你的作息和需要完成的事情，再一起定一个双方都能接受的使用计划。”',
+    points:[
+      '了解孩子使用手机的主要目的：社交、游戏、逃避压力，还是单纯放松。',
+      '共同确定学习、睡眠和娱乐的基本安排，规则适用于家庭约定的情形。',
+      '用稳定执行的约定替代突然没收、反复威胁和偷偷检查。'
+    ],
+    note:'如果使用行为已严重影响睡眠、学习、人际关系，且孩子多次无法控制，应考虑寻求专业帮助。'
   },
-  "ocean-story": {
-    title: "塑料垃圾的终点，可能是海洋动物的餐桌",
-    intro: "从海岸上的塑料瓶，到海水中的微小塑料碎片，人类制造和丢弃的废弃物可能通过多种路径进入海洋。",
-    sections: [
-      ["海洋动物为什么会受到影响？",
-       "一些动物可能误食塑料，也可能被废弃渔具缠绕。漂浮垃圾还可能改变局部环境，并对海岸生态和海洋食物网造成额外压力。"],
-      ["为什么仅靠海滩清理还不够？",
-       "海岸清理可以减少已有垃圾，但源头减量、妥善回收、改善废弃物管理和减少渔具遗失同样重要。污染防治需要个人、企业和公共管理共同参与。"],
-      ["日常生活中的改变",
-       "自带水杯和购物袋，选择可重复使用的用品，正确分类垃圾，参与有组织的海岸清理，并支持重视产品全生命周期的环保实践。"]
-    ]
+  study: {
+    tag:'情景二 · 学习拖延',
+    title:'孩子不愿写作业，怎么说都不动',
+    child:'“我不想学！反正我怎么学都没用！”',
+    parent:'“你现在好像很挫败。我想先弄清楚，是作业太难、太累了，还是最近有什么事情让你很难集中注意力？我们可以先找一个最容易开始的部分。”',
+    points:[
+      '了解拖延背后的原因，而不是直接认定孩子懒惰。',
+      '把大任务拆成可以在较短时间内完成的小步骤。',
+      '讨论合理的学习节奏，同时关注睡眠、休息与孩子的压力。'
+    ],
+    note:'如果孩子长期拒学、情绪低落或学习能力突然变化，建议联系学校和专业人员共同评估。'
   },
-  "panda-story": {
-    title: "大熊猫保护：从单一物种走向生态系统保护",
-    intro: "大熊猫是中国具有代表性的野生动物。它们的生存与山地森林、竹类资源、适宜气候和连通的栖息地紧密相关。",
-    sections: [
-      ["保护大熊猫意味着什么？",
-       "大熊猫保护需要关注食物资源、繁殖环境、栖息地质量以及不同区域之间的连通性。有效的保护通常不是单一措施就能完成的。"],
-      ["保护成效如何持续？",
-       "长期监测、科学研究、自然保护地管理和生态廊道建设，可以帮助管理人员了解种群变化，并识别新的保护需求。"],
-      ["公众可以参与什么？",
-       "参观自然保护地时遵守规定，不追逐或投喂野生动物；辨别正规科普信息；支持科学保护和自然教育。"]
-    ]
+  talk: {
+    tag:'情景三 · 顶嘴争吵',
+    title:'孩子说话很冲，双方很快吵起来',
+    child:'“你凭什么什么都管？我自己的事我自己知道！”',
+    parent:'“你希望有更多自己做决定的空间，我听到了。我也希望我们说话时能互相尊重。我们先把各自最在意的事情说清楚，再商量哪些可以由你自己决定。”',
+    points:[
+      '区分意见不同与人身攻击，不把每次顶嘴都视为挑战权威。',
+      '双方都激动时，约定暂停并在具体时间重新沟通。',
+      '允许孩子不同意，但明确表达威胁、羞辱和暴力不可接受。'
+    ],
+    note:'如果争吵反复升级为威胁、暴力或财物破坏，应优先考虑安全并寻求适当支持。'
   },
-  "bird-story": {
-    title: "候鸟迁徙的路线，需要整片大陆的守护",
-    intro: "许多候鸟会在不同季节迁徙数千公里。旅途中，它们依赖多个停歇地补充能量，因此迁徙保护需要跨越地域的合作。",
-    sections: [
-      ["湿地为何不可替代？",
-       "湖泊、河口、滩涂和浅水湿地能为许多水鸟提供食物与休息空间。湿地退化可能让迁徙途中原本连续的资源网络出现缺口。"],
-      ["观察鸟类时应注意什么？",
-       "保持距离，不围堵鸟群，不接近巢穴，不播放声音反复引诱鸟类，也不要在敏感季节进入限制区域。"],
-      ["公民科学有什么价值？",
-       "在适当的规范和指导下，记录鸟类种类、数量与观察时间，可以帮助研究人员了解物种分布和季节变化。"]
-    ]
-  },
-  "whale-story": {
-    title: "深海巨人：鲸鱼与海洋生态的微妙联系",
-    intro: "鲸类是海洋生态系统的重要组成部分。它们的活动与海洋食物网、营养物质循环和海洋环境变化相互关联。",
-    sections: [
-      ["鲸类面临哪些威胁？",
-       "不同鲸类受到的威胁有所不同，包括渔具缠绕、船舶碰撞、海洋噪声、污染以及气候变化导致的食物资源变化。"],
-      ["科学保护如何开展？",
-       "通过种群调查、被动声学监测、船舶活动管理和渔具改进等方式，研究人员可以更好地识别风险并设计保护措施。"],
-      ["普通人能做什么？",
-       "选择负责任的海洋观赏活动，不购买非法野生动物制品，减少垃圾，并关注可信赖的海洋科学与保护信息。"]
-    ]
-  },
-  "action-story": {
-    title: "普通人如何参与野生动物保护？",
-    intro: "野生动物保护既需要专业研究和长期管理，也离不开社会公众的理解与参与。小行动的价值，在于长期坚持和形成良好的公共习惯。",
-    sections: [
-      ["从消费选择开始",
-       "减少不必要的消费和一次性用品，关注商品来源，避免购买来源不明的野生动物制品，支持合法、透明且更可持续的供应链。"],
-      ["做一名负责任的自然观察者",
-       "野外观察以不干扰动物为原则。不要触摸幼崽、拆除巢穴或擅自救助野生动物；遇到受伤动物时，应联系当地专业救助机构。"],
-      ["让保护知识产生影响",
-       "参加正规自然教育活动，支持有科学依据的保护项目，并在传播图片和信息时核实来源，避免夸大或误导。"]
-    ]
+  door: {
+    tag:'情景四 · 拒绝交流',
+    title:'孩子总是关着门，不愿意和家长说话',
+    child:'“没什么好说的，你出去吧。”',
+    parent:'“好，我先给你一些空间。我不是非要你现在说。如果你愿意，晚饭后我们可以一起散散步。你想说的时候，我会认真听。”',
+    points:[
+      '不要强迫孩子立即倾诉，也不要把沉默简单理解为不孝或故意对抗。',
+      '通过散步、吃饭、共同活动等低压力场景恢复联系。',
+      '持续关注情绪、睡眠、社交与安全状况，尊重隐私但不忽视危险信号。'
+    ],
+    note:'如果孩子突然极度退缩、长期情绪低落，或表达自伤和绝望想法，应及时寻求专业帮助。'
   }
 };
 
-/* =========================
-   05. 打开与关闭文章弹窗
-========================= */
-const modal = document.getElementById("articleModal");
-const modalContent = document.getElementById("modalContent");
-const modalClose = document.getElementById("modalClose");
+document.querySelectorAll('.scenario-tabs .tab').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.scenario-tabs .tab').forEach(tab => tab.classList.remove('active'));
+    button.classList.add('active');
+    const s = scenarios[button.dataset.scenario];
+    const panel = document.getElementById('scenarioPanel');
 
-document.querySelectorAll(".article-open").forEach(button => {
-  button.addEventListener("click", () => {
-    const data = articleData[button.dataset.article];
-    if (!data) return;
+    panel.replaceChildren();
 
-    modalContent.replaceChildren();
+    function add(tag, text, className) {
+      const el = document.createElement(tag);
+      if(className) el.className = className;
+      el.textContent = text;
+      panel.appendChild(el);
+      return el;
+    }
 
-    const heading = document.createElement("h2");
-    heading.id = "modalTitle";
-    heading.textContent = data.title;
-    modalContent.appendChild(heading);
+    add('span', s.tag, 'tag');
+    add('h3', s.title);
+    const child = add('div', '', 'dialogue child');
+    const childStrong = document.createElement('strong');
+    childStrong.textContent = '孩子：';
+    child.append(childStrong, document.createTextNode(s.child));
 
-    const intro = document.createElement("p");
-    intro.textContent = data.intro;
-    modalContent.appendChild(intro);
+    const parent = add('div', '', 'dialogue parent');
+    const parentStrong = document.createElement('strong');
+    parentStrong.textContent = '家长可以说：';
+    parent.append(parentStrong, document.createTextNode(s.parent));
 
-    data.sections.forEach(section => {
-      const title = document.createElement("h3");
-      title.textContent = section[0];
-
-      const paragraph = document.createElement("p");
-      paragraph.textContent = section[1];
-
-      modalContent.append(title, paragraph);
+    add('h3', '接下来怎么做？');
+    const ul = document.createElement('ul');
+    s.points.forEach(point => {
+      const li = document.createElement('li');
+      li.textContent = point;
+      ul.appendChild(li);
     });
-
-    const note = document.createElement("p");
-    note.textContent =
-      "自然保护没有一蹴而就的答案。请结合当地法律、专业建议和最新科学资料采取行动。";
-    modalContent.appendChild(note);
-
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
-    modalClose.focus();
+    panel.appendChild(ul);
+    add('p', s.note, 'muted');
   });
 });
 
-function closeModal() {
-  modal.classList.remove("open");
-  document.body.style.overflow = "";
+/* 亲子关系自测：问题与选项 */
+const questions = [
+  '孩子表达不同意见时，我能否先听完再回应？',
+  '我是否经常用“懒惰”“不懂事”等词评价孩子？',
+  '我是否了解孩子近期真正担心或在意的事情？',
+  '家里的规则是否清晰，并且能够相对稳定地执行？',
+  '我是否只在孩子犯错时才主动和他交流？',
+  '发生冲突时，我能否控制自己的情绪并适时暂停？',
+  '孩子做出积极改变时，我是否会具体地给予肯定？',
+  '我是否允许孩子在合理范围内自己做决定？'
+];
+
+const options = [
+  {text:'通常能做到', value:2},
+  {text:'有时能做到', value:1},
+  {text:'目前比较困难', value:0}
+];
+
+const quizQuestions = document.getElementById('quizQuestions');
+
+questions.forEach((question, i) => {
+  const wrap = document.createElement('div');
+  wrap.className = 'quiz-question';
+  const p = document.createElement('p');
+  p.textContent = `${i+1}. ${question}`;
+  wrap.appendChild(p);
+
+  options.forEach(option => {
+    const label = document.createElement('label');
+    const radio = document.createElement('input');
+    radio.type = 'radio';
+    radio.name = `q${i}`;
+    radio.value = option.value;
+    radio.required = true;
+    radio.addEventListener('change', updateQuizProgress);
+    label.append(radio, document.createTextNode(' ' + option.text));
+    wrap.appendChild(label);
+  });
+
+  quizQuestions.appendChild(wrap);
+});
+
+function updateQuizProgress(){
+  const answered = questions.filter((_, i) =>
+    document.querySelector(`input[name="q${i}"]:checked`)
+  ).length;
+  document.getElementById('quizProgress').style.width =
+    (answered / questions.length * 100) + '%';
+  document.getElementById('progressText').textContent =
+    `已完成 ${answered} / ${questions.length} 题`;
 }
 
-modalClose.addEventListener("click", closeModal);
-
-modal.addEventListener("click", event => {
-  if (event.target === modal) closeModal();
-});
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeModal();
-});
-
-/* =========================
-   06. 本地演示订阅表单
-========================= */
-const subscribeForm = document.getElementById("subscribeForm");
-const emailInput = document.getElementById("emailInput");
-const formMessage = document.getElementById("formMessage");
-
-subscribeForm.addEventListener("submit", event => {
+document.getElementById('quizForm').addEventListener('submit', event => {
   event.preventDefault();
 
-  if (!emailInput.checkValidity()) {
-    emailInput.reportValidity();
+  let score = 0;
+  questions.forEach((_, i) => {
+    score += Number(document.querySelector(`input[name="q${i}"]:checked`).value);
+  });
+
+  let heading, advice;
+
+  if(score >= 13){
+    heading = '你已经具备不少积极的沟通习惯';
+    advice = '继续保持倾听、稳定规则和尊重自主。也可以邀请孩子谈谈哪些互动让他感到安心，以及哪些地方仍需要改善。';
+  }else if(score >= 7){
+    heading = '有一些值得继续改善的地方';
+    advice = '选择一项最容易改变的习惯开始，例如每天认真倾听十分钟，或减少争执中的标签化语言。一次专注改变一件事，更容易坚持。';
+  }else{
+    heading = '建议从降低冲突、修复关系开始';
+    advice = '这不是对你或孩子的评价。近期的互动可能让双方都很辛苦。先减少羞辱、威胁和情绪化争执，再逐步建立沟通习惯。必要时可以寻求专业支持。';
+  }
+
+  const result = document.getElementById('quizResult');
+  result.replaceChildren();
+
+  const h = document.createElement('h3');
+  h.textContent = heading;
+  const p = document.createElement('p');
+  p.textContent = `本次自我反思得分：${score} / 16。`;
+  const detail = document.createElement('p');
+  detail.textContent = advice;
+  const disclaimer = document.createElement('p');
+  disclaimer.className = 'muted';
+  disclaimer.textContent = '此结果仅用于家庭教育自我反思，不是经过验证的心理量表，也不构成诊断。';
+
+  result.append(h, p, detail, disclaimer);
+  result.style.display = 'block';
+  result.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
+
+document.getElementById('quizForm').addEventListener('reset', () => {
+  setTimeout(() => {
+    updateQuizProgress();
+    document.getElementById('quizResult').style.display = 'none';
+  }, 0);
+});
+
+/* 七天行动清单 */
+const checklist = document.querySelectorAll('#dailyChecklist input[type=checkbox]');
+function updateChecklist(){
+  const completed = [...checklist].filter(item => item.checked).length;
+  document.getElementById('checkProgress').textContent =
+    `已完成 ${completed} / ${checklist.length} 项`;
+}
+checklist.forEach(item => item.addEventListener('change', updateChecklist));
+
+/* 行动计划生成与复制 */
+let planText = '';
+
+document.getElementById('savePlan').addEventListener('click', () => {
+  const problem = document.getElementById('problem').value.trim();
+  const plan = document.getElementById('plan').value.trim();
+
+  if(!problem || !plan){
+    alert('请先填写目前的问题和准备尝试的做法。');
     return;
   }
 
-  formMessage.textContent =
-    "感谢关注野生动物保护！这是本地演示页面，尚未连接邮件订阅服务。";
+  planText = `我的亲子沟通行动卡\n\n目前最困扰的问题：\n${problem}\n\n我准备尝试的做法：\n${plan}\n\n提醒自己：先理解，再引导；关注行为，不给孩子贴标签。`;
 
-  emailInput.value = "";
+  const result = document.getElementById('planResult');
+  result.replaceChildren();
+  const strong = document.createElement('strong');
+  strong.textContent = '行动卡已生成';
+  const p = document.createElement('p');
+  p.style.whiteSpace = 'pre-wrap';
+  p.textContent = planText;
+  result.append(strong, p);
+  result.style.display = 'block';
 });
 
-/* =========================
-   07. 返回顶部与年份
-========================= */
-const backTop = document.getElementById("backTop");
+document.getElementById('copyPlan').addEventListener('click', async () => {
+  if(!planText){
+    alert('请先点击“生成我的行动卡”。');
+    return;
+  }
 
-window.addEventListener("scroll", () => {
-  backTop.classList.toggle("show", window.scrollY > 450);
+  try{
+    await navigator.clipboard.writeText(planText);
+    alert('行动卡已复制！');
+  }catch(error){
+    const area = document.createElement('textarea');
+    area.value = planText;
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    const copied = document.execCommand('copy');
+    area.remove();
+    alert(copied ? '行动卡已复制！' : '复制失败，请手动选择行动卡内容复制。');
+  }
 });
-
-backTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
 </script>
 
 </body>
