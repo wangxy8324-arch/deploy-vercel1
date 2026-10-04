@@ -1,0 +1,1959 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="野境 Wildlife Journal——关注野生动物保护、生物多样性、生态环境与可持续未来。">
+<meta name="keywords" content="野生动物,动物保护,濒危物种,生态环境,生物多样性,自然保护">
+<title>野境 Wildlife Journal | 守护生命，共享地球</title>
+
+<style>
+/* =========================
+   01. 全局基础样式
+========================= */
+:root {
+  --green: #285c43;
+  --green-dark: #193c2c;
+  --green-light: #e8f0e8;
+  --lime: #d4e7a2;
+  --cream: #f8f7f0;
+  --paper: #ffffff;
+  --text: #26342c;
+  --muted: #728076;
+  --border: #e3e8df;
+  --shadow: 0 12px 35px rgba(35, 65, 45, .08);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+  transition: background .3s, color .3s;
+}
+
+body.dark {
+  --cream: #141e18;
+  --paper: #1d2a22;
+  --text: #e4eee5;
+  --muted: #a2b3a6;
+  --border: #33463a;
+  --green-light: #263c2e;
+  --shadow: 0 12px 35px rgba(0,0,0,.18);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--green);
+  background: var(--green-light);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.dark .eyebrow {
+  color: var(--lime);
+}
+
+.section-heading h2 {
+  font-size: clamp(28px, 4vw, 43px);
+  line-height: 1.3;
+  letter-spacing: -1px;
+  margin-bottom: 13px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid var(--green);
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-outline {
+  color: var(--green);
+}
+
+.dark .btn-outline {
+  color: var(--lime);
+  border-color: var(--lime);
+}
+
+.tag {
+  display: inline-block;
+  color: var(--green);
+  background: var(--green-light);
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================
+   02. 顶部导航
+========================= */
+.topbar {
+  background: var(--green-dark);
+  color: #e7f0e7;
+  text-align: center;
+  padding: 7px 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 23px;
+  font-weight: 900;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: var(--green);
+  color: white;
+  border-radius: 14px 14px 14px 4px;
+  font-size: 24px;
+}
+
+.logo small {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.icon-btn {
+  border: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--text);
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* =========================
+   03. 首页主视觉
+========================= */
+.hero {
+  background: var(--green-dark);
+  color: white;
+  overflow: hidden;
+}
+
+.hero-grid {
+  min-height: 555px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.hero-copy {
+  padding: 35px 0;
+}
+
+.hero-label {
+  color: var(--lime);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 23px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5.4vw, 66px);
+  line-height: 1.18;
+  letter-spacing: -2px;
+  margin-bottom: 23px;
+}
+
+.hero h1 span {
+  color: var(--lime);
+}
+
+.hero-copy p {
+  max-width: 520px;
+  color: #c4d6c8;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero .btn-primary {
+  background: var(--lime);
+  color: var(--green-dark);
+  border-color: var(--lime);
+}
+
+.hero .btn-outline {
+  border-color: #668573;
+  color: white;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 440px;
+}
+
+.hero-image {
+  height: 440px;
+  border-radius: 180px 180px 18px 18px;
+  background:
+    linear-gradient(0deg, rgba(14,38,24,.24), transparent 55%),
+    url("https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=85")
+    center / cover;
+  box-shadow: 0 25px 60px rgba(0,0,0,.22);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  padding: 17px 20px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px;
+  background: rgba(19,43,28,.78);
+  backdrop-filter: blur(8px);
+}
+
+.image-caption strong {
+  display: block;
+  font-size: 14px;
+}
+
+.image-caption span {
+  color: #d0dfd2;
+  font-size: 11px;
+}
+
+.hero-note {
+  position: absolute;
+  top: 45px;
+  left: -28px;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--lime);
+  color: var(--green-dark);
+  transform: rotate(-10deg);
+  box-shadow: var(--shadow);
+}
+
+.hero-note strong {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.hero-note span {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* =========================
+   04. 生态数据栏
+========================= */
+.stats {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 32px 0;
+}
+
+.stat {
+  text-align: center;
+  padding: 8px 15px;
+  border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+  border: 0;
+}
+
+.stat strong {
+  display: block;
+  color: var(--green);
+  font-size: 31px;
+  line-height: 1.4;
+}
+
+.dark .stat strong {
+  color: var(--lime);
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================
+   05. 文章博客区
+========================= */
+.blog-section {
+  background: var(--cream);
+}
+
+.blog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 27px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  border-radius: 100px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 15px;
+  min-width: 225px;
+}
+
+.search-box input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.article-card[hidden] {
+  display: none;
+}
+
+.article-img {
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+  background: var(--green-light);
+}
+
+.article-img img {
+  height: 100%;
+  transition: transform .5s;
+}
+
+.article-card:hover .article-img img {
+  transform: scale(1.06);
+}
+
+.article-img .tag {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: rgba(255,255,255,.94);
+}
+
+.article-content {
+  padding: 22px;
+}
+
+.article-meta {
+  display: flex;
+  gap: 13px;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 11px;
+}
+
+.article-content h3 {
+  font-size: 19px;
+  line-height: 1.55;
+  margin-bottom: 11px;
+}
+
+.article-content p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 19px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.dark .read-more {
+  color: var(--lime);
+}
+
+.read-more:hover {
+  gap: 13px;
+}
+
+.no-results {
+  display: none;
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* =========================
+   06. 专题横幅
+========================= */
+.feature-section {
+  padding: 25px 0 80px;
+}
+
+.feature-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  background: #dce8d5;
+  color: #223e2b;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.feature-copy {
+  padding: 55px;
+}
+
+.feature-copy .eyebrow {
+  background: #c6dabc;
+}
+
+.feature-copy h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.35;
+  margin-bottom: 18px;
+}
+
+.feature-copy p {
+  font-size: 14px;
+  color: #536958;
+  margin-bottom: 25px;
+}
+
+.feature-image {
+  min-height: 350px;
+  background:
+    linear-gradient(90deg, rgba(220,232,213,.12), transparent),
+    url("https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=85")
+    center / cover;
+}
+
+/* =========================
+   07. 濒危动物展示
+========================= */
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.species-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.species-card img {
+  height: 205px;
+  transition: transform .4s;
+}
+
+.species-card:hover img {
+  transform: scale(1.05);
+}
+
+.species-image {
+  overflow: hidden;
+}
+
+.species-info {
+  padding: 18px;
+}
+
+.species-info h3 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.species-info p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.status {
+  display: inline-flex;
+  margin-top: 12px;
+  border-radius: 5px;
+  padding: 4px 8px;
+  background: #f8e7d6;
+  color: #9b5421;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* =========================
+   08. 保护行动步骤
+========================= */
+.action-section {
+  background: var(--green-dark);
+  color: white;
+}
+
+.action-section .eyebrow {
+  background: #304f3b;
+  color: var(--lime);
+}
+
+.action-section .section-heading p {
+  color: #b8cbbb;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.action-card {
+  padding: 30px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: var(--radius);
+  transition: background .2s, transform .2s;
+}
+
+.action-card:hover {
+  background: rgba(255,255,255,.1);
+  transform: translateY(-4px);
+}
+
+.action-icon {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+  background: #365942;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.action-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.action-card p {
+  font-size: 13px;
+  color: #bed0c1;
+  line-height: 1.9;
+}
+
+/* =========================
+   09. 每周倡议与订阅
+========================= */
+.newsletter {
+  padding: 75px 0;
+}
+
+.newsletter-box {
+  background: var(--green-light);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.newsletter h2 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.newsletter p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+.subscribe-form input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 8px 13px;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.subscribe-form button {
+  border: 0;
+  background: var(--green);
+  color: white;
+  border-radius: 100px;
+  padding: 10px 19px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.form-message {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--green);
+}
+
+/* =========================
+   10. 页脚
+========================= */
+footer {
+  background: #142b1e;
+  color: #dce9dd;
+  padding: 55px 0 22px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 35px;
+  padding-bottom: 38px;
+}
+
+.footer-brand .logo {
+  color: white;
+  margin-bottom: 17px;
+}
+
+.footer-brand p {
+  color: #a8c0ae;
+  font-size: 12px;
+  max-width: 300px;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  margin-bottom: 16px;
+  color: var(--lime);
+}
+
+.footer-col a {
+  display: block;
+  color: #b7c8ba;
+  font-size: 12px;
+  margin: 9px 0;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid #35513e;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #91aa98;
+  font-size: 11px;
+}
+
+/* =========================
+   11. 文章弹窗
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,.68);
+  padding: 20px;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-panel {
+  position: relative;
+  background: var(--paper);
+  color: var(--text);
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 30px 100px rgba(0,0,0,.25);
+}
+
+.modal-close {
+  position: sticky;
+  float: right;
+  top: 0;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--text);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.modal-panel h2 {
+  font-size: 29px;
+  line-height: 1.4;
+  margin: 24px 0 15px;
+}
+
+.modal-panel p {
+  margin: 13px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.modal-panel h3 {
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.modal-panel ul {
+  margin: 12px 0 12px 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.back-top {
+  position: fixed;
+  right: 22px;
+  bottom: 23px;
+  z-index: 90;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  box-shadow: var(--shadow);
+  font-size: 19px;
+  display: none;
+}
+
+.back-top.show {
+  display: block;
+}
+
+/* =========================
+   12. 响应式适配
+========================= */
+@media (max-width: 950px) {
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero-grid {
+    gap: 25px;
+  }
+
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .species-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .nav-inner {
+    min-height: 68px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .logo-mark {
+    width: 37px;
+    height: 37px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 12px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 11px 5px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+
+  .hero-copy {
+    padding: 20px 0 0;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-visual {
+    min-height: 350px;
+  }
+
+  .hero-image {
+    height: 350px;
+    border-radius: 130px 130px 15px 15px;
+  }
+
+  .hero-note {
+    left: -5px;
+    top: 25px;
+    width: 85px;
+    height: 85px;
+  }
+
+  .hero-note strong {
+    font-size: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 0;
+  }
+
+  .stat {
+    padding: 16px 8px;
+  }
+
+  .stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stat:nth-child(-n+2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .blog-toolbar {
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-img {
+    height: 235px;
+  }
+
+  .feature-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-copy {
+    padding: 30px 25px;
+  }
+
+  .feature-image {
+    min-height: 250px;
+  }
+
+  .species-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .species-card img {
+    height: 145px;
+  }
+
+  .species-info {
+    padding: 12px;
+  }
+
+  .species-info h3 {
+    font-size: 15px;
+  }
+
+  .action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-box {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 25px;
+  }
+
+  .newsletter h2 {
+    font-size: 26px;
+  }
+
+  .subscribe-form button {
+    padding: 9px 13px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 18px;
+  }
+
+  .modal-panel {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 370px) {
+  .species-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .subscribe-form {
+    border-radius: 16px;
+    flex-wrap: wrap;
+  }
+
+  .subscribe-form input {
+    flex-basis: 100%;
+  }
+
+  .subscribe-form button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 顶部公告 -->
+<div class="topbar">
+  🌿 每一个生命都值得被尊重 · 每一片森林都值得被守护
+</div>
+
+<!-- 导航 -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="#home" aria-label="野境首页">
+      <span class="logo-mark">🌿</span>
+      <span>
+        野境
+        <small>WILDLIFE JOURNAL</small>
+      </span>
+    </a>
+
+    <nav aria-label="主导航">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#stories">自然日志</a></li>
+        <li><a href="#species">濒危物种</a></li>
+        <li><a href="#actions">保护行动</a></li>
+        <li><a href="#about">关于我们</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle"
+        aria-label="切换深色模式" title="切换深色模式">☾</button>
+      <button class="icon-btn menu-toggle" id="menuToggle"
+        aria-label="打开导航菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 首页 -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-label">WILDLIFE · NATURE · FUTURE</div>
+
+      <h1>
+        让野生生命<br>
+        <span>自由地生活。</span>
+      </h1>
+
+      <p>
+        地球不只属于人类。森林中的每一次呼吸，海洋里每一次迁徙，
+        都是这个星球生生不息的证明。让我们重新认识自然，
+        保护野生动物，共同创造人与万物和谐共生的未来。
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#stories">探索自然故事 ↗</a>
+        <a class="btn btn-outline" href="#actions">加入保护行动</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image" role="img"
+        aria-label="非洲野生动物自然摄影"></div>
+
+      <div class="hero-note">
+        <strong>01</strong>
+        <span>PLANET<br>ONE HOME</span>
+      </div>
+
+      <div class="image-caption">
+        <strong>野性之美，不应只存在于照片里。</strong>
+        <span>保护栖息地，让下一代也能看见真实的野生世界。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 数据展示 -->
+<section class="stats" aria-label="全球生物多样性概览">
+  <div class="container stats-grid">
+    <div class="stat">
+      <strong>∞</strong>
+      <span>值得探索的自然奥秘</span>
+    </div>
+    <div class="stat">
+      <strong>1</strong>
+      <span>我们共同拥有的地球</span>
+    </div>
+    <div class="stat">
+      <strong>100%</strong>
+      <span>每个人都能参与保护</span>
+    </div>
+    <div class="stat">
+      <strong>NOW</strong>
+      <span>行动，从现在开始</span>
+    </div>
+  </div>
+</section>
+
+<!-- 文章列表 -->
+<section class="section blog-section" id="stories">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">FIELD NOTES / 自然观察</span>
+      <h2>来自野外的故事</h2>
+      <p>
+        走进森林、湿地、草原与海洋。从科学观察到保护实践，
+        了解野生动物面临的挑战，以及我们可以做出的改变。
+      </p>
+    </div>
+
+    <div class="blog-toolbar">
+      <div class="filters" aria-label="文章分类">
+        <button class="filter-btn active" data-filter="all">全部文章</button>
+        <button class="filter-btn" data-filter="forest">森林生态</button>
+        <button class="filter-btn" data-filter="ocean">海洋保护</button>
+        <button class="filter-btn" data-filter="species">物种守护</button>
+        <button class="filter-btn" data-filter="action">绿色行动</button>
+      </div>
+
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" id="articleSearch"
+          placeholder="搜索动物、森林、保护……"
+          aria-label="搜索文章">
+      </label>
+    </div>
+
+    <div class="article-grid" id="articleGrid">
+
+      <article class="article-card"
+        data-category="forest"
+        data-search="森林 栖息地 老虎 生物多样性 生态系统">
+        <div class="article-img">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80"
+            alt="森林中的野生老虎">
+          <span class="tag">森林生态</span>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>自然与生态</span><span>阅读约 5 分钟</span>
+          </div>
+          <h3>森林不仅是树木，更是无数生命的家园</h3>
+          <p>
+            从大型食肉动物到土壤中的微生物，森林通过复杂的食物网
+            维持生态平衡。保护森林，就是保护一整套生命支持系统。
+          </p>
+          <button class="read-more article-open"
+            data-article="forest-story">阅读全文 ↗</button>
+        </div>
+      </article>
+
+      <article class="article-card"
+        data-category="ocean"
+        data-search="海洋 海龟 塑料污染 海洋垃圾 环境保护">
+        <div class="article-img">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=800&q=80"
+            alt="清澈海洋与海岸环境">
+          <span class="tag">海洋保护</span>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>蓝色星球</span><span>阅读约 4 分钟</span>
+          </div>
+          <h3>塑料垃圾的终点，可能是海洋动物的餐桌</h3>
+          <p>
+            一次性塑料可能通过河流进入海洋，并在环境中长期残留。
+            减少不必要的塑料使用，是每个人都可以开始的改变。
+          </p>
+          <button class="read-more article-open"
+            data-article="ocean-story">阅读全文 ↗</button>
+        </div>
+      </article>
+
+      <article class="article-card"
+        data-category="species"
+        data-search="大熊猫 竹林 中国 濒危物种 栖息地保护">
+        <div class="article-img">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80"
+            alt="大熊猫在竹林中">
+          <span class="tag">物种守护</span>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>中国野生动物</span><span>阅读约 6 分钟</span>
+          </div>
+          <h3>大熊猫保护：从单一物种走向生态系统保护</h3>
+          <p>
+            保护大熊猫不仅是守护一种动物，也意味着保护竹林、
+            山地森林以及与之共享栖息地的其他野生生物。
+          </p>
+          <button class="read-more article-open"
+            data-article="panda-story">阅读全文 ↗</button>
+        </div>
+      </article>
+
+      <article class="article-card"
+        data-category="forest"
+        data-search="候鸟 湿地 迁徙 鸟类 自然保护区">
+        <div class="article-img">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=800&q=80"
+            alt="自然环境中的野生鸟类">
+          <span class="tag">森林生态</span>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>迁徙与栖息地</span><span>阅读约 4 分钟</span>
+          </div>
+          <h3>候鸟迁徙的路线，需要整片大陆的守护</h3>
+          <p>
+            对候鸟而言，繁殖地、停歇地和越冬地共同构成一条生命走廊。
+            任何关键湿地的消失，都可能影响漫长旅程。
+          </p>
+          <button class="read-more article-open"
+            data-article="bird-story">阅读全文 ↗</button>
+        </div>
+      </article>
+
+      <article class="article-card"
+        data-category="ocean"
+        data-search="鲸鱼 鲸类 海洋生态 船舶噪声 海洋生物">
+        <div class="article-img">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=800&q=80"
+            alt="海洋中的鲸类">
+          <span class="tag">海洋保护</span>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>深蓝观察</span><span>阅读约 5 分钟</span>
+          </div>
+          <h3>深海巨人：鲸鱼与海洋生态的微妙联系</h3>
+          <p>
+            鲸类通过迁徙、摄食和营养物质循环参与海洋生态过程。
+            减少海洋污染、降低碰撞风险，有助于它们安全生存。
+          </p>
+          <button class="read-more article-open"
+            data-article="whale-story">阅读全文 ↗</button>
+        </div>
+      </article>
+
+      <article class="article-card"
+        data-category="action"
+        data-search="志愿者 公民科学 生态摄影 观鸟 保护行动">
+        <div class="article-img">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+            alt="阳光穿过绿色森林">
+          <span class="tag">绿色行动</span>
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span>行动指南</span><span>阅读约 3 分钟</span>
+          </div>
+          <h3>普通人如何参与野生动物保护？</h3>
+          <p>
+            从减少塑料垃圾、尊重野生动物，到支持科学保护项目，
+            日常选择可以汇聚成推动环境改善的力量。
+          </p>
+          <button class="read-more article-open"
+            data-article="action-story">阅读全文 ↗</button>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+      没有找到匹配的文章。试试其他关键词吧。
+    </div>
+  </div>
+</section>
+
+<!-- 主题横幅 -->
+<section class="feature-section">
+  <div class="container">
+    <div class="feature-banner">
+      <div class="feature-copy">
+        <span class="eyebrow">A SHARED PLANET</span>
+        <h2>保护动物，<br>也是保护人类自己的未来。</h2>
+        <p>
+          清洁的水源、健康的森林、充满生命的海洋，
+          都与人类的生活紧密相连。生物多样性并非遥远的科学概念，
+          而是支撑我们日常生活的重要基础。
+        </p>
+        <a class="btn btn-primary" href="#actions">从身边开始改变 ↗</a>
+      </div>
+      <div class="feature-image"
+        role="img" aria-label="自然环境中的野生动物"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 濒危物种 -->
+<section class="section" id="species">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">SPECIES SPOTLIGHT</span>
+      <h2>认识那些需要我们关注的生命</h2>
+      <p>
+        每一个物种都有其独特的生态角色。以下是一些具有代表性的
+        野生动物，它们面临的威胁与保护需求各不相同。
+      </p>
+    </div>
+
+    <div class="species-grid">
+      <article class="species-card">
+        <div class="species-image">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=600&q=80"
+            alt="大熊猫">
+        </div>
+        <div class="species-info">
+          <h3>大熊猫</h3>
+          <p>中国山地森林 · 栖息地保护</p>
+          <span class="status">保护成果值得持续巩固</span>
+        </div>
+      </article>
+
+      <article class="species-card">
+        <div class="species-image">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=600&q=80"
+            alt="非洲野生大型哺乳动物">
+        </div>
+        <div class="species-info">
+          <h3>非洲象</h3>
+          <p>非洲草原与森林 · 反盗猎保护</p>
+          <span class="status">关注栖息地与非法贸易</span>
+        </div>
+      </article>
+
+      <article class="species-card">
+        <div class="species-image">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80"
+            alt="野生虎">
+        </div>
+        <div class="species-info">
+          <h3>野生虎</h3>
+          <p>亚洲森林 · 生态廊道保护</p>
+          <span class="status">关注栖息地破碎化</span>
+        </div>
+      </article>
+
+      <article class="species-card">
+        <div class="species-image">
+          <img loading="lazy"
+            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=600&q=80"
+            alt="海洋与海岸生态环境">
+        </div>
+        <div class="species-info">
+          <h3>海龟</h3>
+          <p>热带与亚热带海域 · 海洋保护</p>
+          <span class="status">关注误捕与海洋垃圾</span>
+        </div>
+      </article>
+    </div>
+
+    <p style="color:var(--muted);font-size:11px;margin-top:20px">
+      注：保护状态可能随评估标准、地区种群和最新研究而变化。
+      以上卡片侧重介绍保护议题，并非实时濒危等级数据库。
+    </p>
+  </div>
+</section>
+
+<!-- 保护行动 -->
+<section class="section action-section" id="actions">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">SMALL STEPS, REAL CHANGE</span>
+      <h2>让保护行动融入日常生活</h2>
+      <p>
+        保护野生动物并不意味着每个人都要成为科学家。
+        更重要的是了解问题、作出负责任的选择，并将正确的理念传递出去。
+      </p>
+    </div>
+
+    <div class="action-grid">
+      <article class="action-card">
+        <div class="action-icon">🌳</div>
+        <h3>守护自然栖息地</h3>
+        <p>
+          尊重自然保护区的管理规定，减少对野生动物的惊扰，
+          不随意采摘植物或破坏巢穴，支持森林与湿地修复。
+        </p>
+      </article>
+
+      <article class="action-card">
+        <div class="action-icon">♻️</div>
+        <h3>减少环境污染</h3>
+        <p>
+          优先使用可重复利用的用品，妥善处理垃圾，
+          减少一次性塑料消费，避免废弃物进入河流和海洋。
+        </p>
+      </article>
+
+      <article class="action-card">
+        <div class="action-icon">🦋</div>
+        <h3>拒绝非法野生动物贸易</h3>
+        <p>
+          不购买来源不明的野生动物制品，不参与非法捕猎，
+          发现涉嫌违法活动时，通过当地主管部门的正规渠道反映。
+        </p>
+      </article>
+
+      <article class="action-card">
+        <div class="action-icon">📷</div>
+        <h3>文明观察与摄影</h3>
+        <p>
+          保持安全距离，不追逐、不投喂、不使用不当方式引诱动物，
+          也不要公开可能导致敏感物种遭到捕捉的精确位置。
+        </p>
+      </article>
+
+      <article class="action-card">
+        <div class="action-icon">📚</div>
+        <h3>传播科学知识</h3>
+        <p>
+          学习识别可靠的科学信息，分享经过核实的保护知识，
+          鼓励家庭、学校和社区开展自然教育活动。
+        </p>
+      </article>
+
+      <article class="action-card">
+        <div class="action-icon">🤝</div>
+        <h3>支持专业保护项目</h3>
+        <p>
+          根据自身情况参与正规机构的志愿服务或公益项目，
+          关注资金透明、科学评估和尊重当地社区的保护实践。
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅 -->
+<section class="newsletter" id="about">
+  <div class="container">
+    <div class="newsletter-box">
+      <div>
+        <span class="eyebrow">LET NATURE INSPIRE YOU</span>
+        <h2>让自然的声音，<br>每周抵达你的身边。</h2>
+        <p>
+          这里是一份关于野生动物、生态保护与绿色生活的阅读邀请。
+          留下你的邮箱，体验本地演示订阅表单。
+        </p>
+      </div>
+
+      <div>
+        <form class="subscribe-form" id="subscribeForm">
+          <input type="email" id="emailInput"
+            placeholder="请输入你的电子邮箱"
+            aria-label="电子邮箱地址" required>
+          <button type="submit">加入我们 ↗</button>
+        </form>
+        <div class="form-message" id="formMessage" aria-live="polite">
+          🌱 珍惜每一个生命，从关注自然开始。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 页脚 -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">
+          <span class="logo-mark">🌿</span>
+          <span>野境<small>WILDLIFE JOURNAL</small></span>
+        </a>
+        <p>
+          用文字记录自然，用知识理解生命，用行动守护地球。
+          希望这里能成为你探索野生世界的一扇窗。
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>探索内容</h4>
+        <a href="#stories">自然观察</a>
+        <a href="#species">濒危物种</a>
+        <a href="#actions">保护行动</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>保护理念</h4>
+        <a href="#actions">栖息地保护</a>
+        <a href="#actions">减少塑料污染</a>
+        <a href="#actions">文明观赏动物</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>了解更多</h4>
+        <a href="https://www.worldwildlife.org/"
+          target="_blank" rel="noopener noreferrer">世界自然基金会 WWF ↗</a>
+        <a href="https://www.iucnredlist.org/"
+          target="_blank" rel="noopener noreferrer">IUCN 红色名录 ↗</a>
+        <a href="https://www.cites.org/"
+          target="_blank" rel="noopener noreferrer">CITES 公约 ↗</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> 野境 Wildlife Journal. All rights reserved.</span>
+      <span>以尊重生命为起点，以生态共生为方向。</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 返回顶部 -->
+<button class="back-top" id="backTop"
+  aria-label="返回页面顶部" title="返回顶部">↑</button>
+
+<!-- 文章详情弹窗 -->
+<div class="modal" id="articleModal"
+  role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-panel">
+    <button class="modal-close" id="modalClose"
+      aria-label="关闭文章">×</button>
+    <span class="eyebrow">WILDLIFE JOURNAL / 深度阅读</span>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+/* =========================
+   01. 移动端导航菜单
+========================= */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* =========================
+   02. 深色模式
+========================= */
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const dark = document.body.classList.contains("dark");
+  themeToggle.textContent = dark ? "☀" : "☾";
+  themeToggle.setAttribute(
+    "aria-label",
+    dark ? "切换浅色模式" : "切换深色模式"
+  );
+});
+
+/* =========================
+   03. 文章搜索与分类过滤
+========================= */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const articles = document.querySelectorAll(".article-card");
+const articleSearch = document.getElementById("articleSearch");
+const noResults = document.getElementById("noResults");
+
+let currentFilter = "all";
+
+function filterArticles() {
+  const keyword = articleSearch.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  articles.forEach(article => {
+    const category = article.dataset.category;
+    const searchText = (
+      article.dataset.search + " " + article.innerText
+    ).toLowerCase();
+
+    const matchesCategory =
+      currentFilter === "all" || category === currentFilter;
+    const matchesKeyword = searchText.includes(keyword);
+    const visible = matchesCategory && matchesKeyword;
+
+    article.hidden = !visible;
+    if (visible) visibleCount++;
+  });
+
+  noResults.style.display = visibleCount === 0 ? "block" : "none";
+}
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    currentFilter = button.dataset.filter;
+    filterArticles();
+  });
+});
+
+articleSearch.addEventListener("input", filterArticles);
+
+/* =========================
+   04. 文章内容数据
+========================= */
+const articleData = {
+  "forest-story": {
+    title: "森林不仅是树木，更是无数生命的家园",
+    intro: "森林是由植物、动物、真菌、微生物、水和土壤共同构成的复杂生态系统。每个成员都在其中发挥着作用。",
+    sections: [
+      ["森林为何如此重要？",
+       "森林为大量陆生物种提供食物、庇护和繁殖场所。树木吸收并储存碳，植被帮助保持土壤，森林水文过程也与区域水循环密切相关。"],
+      ["栖息地破碎化意味着什么？",
+       "当连续的森林被道路、建设用地或其他开发活动分割时，动物迁徙、觅食和繁殖可能受到阻碍。孤立的小种群还可能面临遗传多样性下降等风险。"],
+      ["我们可以做些什么？",
+       "支持经过科学评估的森林保护与修复项目；尊重保护区规定；选购来源合法、可追溯的产品；在户外活动时不破坏植被、不遗留垃圾。"]
+    ]
+  },
+  "ocean-story": {
+    title: "塑料垃圾的终点，可能是海洋动物的餐桌",
+    intro: "从海岸上的塑料瓶，到海水中的微小塑料碎片，人类制造和丢弃的废弃物可能通过多种路径进入海洋。",
+    sections: [
+      ["海洋动物为什么会受到影响？",
+       "一些动物可能误食塑料，也可能被废弃渔具缠绕。漂浮垃圾还可能改变局部环境，并对海岸生态和海洋食物网造成额外压力。"],
+      ["为什么仅靠海滩清理还不够？",
+       "海岸清理可以减少已有垃圾，但源头减量、妥善回收、改善废弃物管理和减少渔具遗失同样重要。污染防治需要个人、企业和公共管理共同参与。"],
+      ["日常生活中的改变",
+       "自带水杯和购物袋，选择可重复使用的用品，正确分类垃圾，参与有组织的海岸清理，并支持重视产品全生命周期的环保实践。"]
+    ]
+  },
+  "panda-story": {
+    title: "大熊猫保护：从单一物种走向生态系统保护",
+    intro: "大熊猫是中国具有代表性的野生动物。它们的生存与山地森林、竹类资源、适宜气候和连通的栖息地紧密相关。",
+    sections: [
+      ["保护大熊猫意味着什么？",
+       "大熊猫保护需要关注食物资源、繁殖环境、栖息地质量以及不同区域之间的连通性。有效的保护通常不是单一措施就能完成的。"],
+      ["保护成效如何持续？",
+       "长期监测、科学研究、自然保护地管理和生态廊道建设，可以帮助管理人员了解种群变化，并识别新的保护需求。"],
+      ["公众可以参与什么？",
+       "参观自然保护地时遵守规定，不追逐或投喂野生动物；辨别正规科普信息；支持科学保护和自然教育。"]
+    ]
+  },
+  "bird-story": {
+    title: "候鸟迁徙的路线，需要整片大陆的守护",
+    intro: "许多候鸟会在不同季节迁徙数千公里。旅途中，它们依赖多个停歇地补充能量，因此迁徙保护需要跨越地域的合作。",
+    sections: [
+      ["湿地为何不可替代？",
+       "湖泊、河口、滩涂和浅水湿地能为许多水鸟提供食物与休息空间。湿地退化可能让迁徙途中原本连续的资源网络出现缺口。"],
+      ["观察鸟类时应注意什么？",
+       "保持距离，不围堵鸟群，不接近巢穴，不播放声音反复引诱鸟类，也不要在敏感季节进入限制区域。"],
+      ["公民科学有什么价值？",
+       "在适当的规范和指导下，记录鸟类种类、数量与观察时间，可以帮助研究人员了解物种分布和季节变化。"]
+    ]
+  },
+  "whale-story": {
+    title: "深海巨人：鲸鱼与海洋生态的微妙联系",
+    intro: "鲸类是海洋生态系统的重要组成部分。它们的活动与海洋食物网、营养物质循环和海洋环境变化相互关联。",
+    sections: [
+      ["鲸类面临哪些威胁？",
+       "不同鲸类受到的威胁有所不同，包括渔具缠绕、船舶碰撞、海洋噪声、污染以及气候变化导致的食物资源变化。"],
+      ["科学保护如何开展？",
+       "通过种群调查、被动声学监测、船舶活动管理和渔具改进等方式，研究人员可以更好地识别风险并设计保护措施。"],
+      ["普通人能做什么？",
+       "选择负责任的海洋观赏活动，不购买非法野生动物制品，减少垃圾，并关注可信赖的海洋科学与保护信息。"]
+    ]
+  },
+  "action-story": {
+    title: "普通人如何参与野生动物保护？",
+    intro: "野生动物保护既需要专业研究和长期管理，也离不开社会公众的理解与参与。小行动的价值，在于长期坚持和形成良好的公共习惯。",
+    sections: [
+      ["从消费选择开始",
+       "减少不必要的消费和一次性用品，关注商品来源，避免购买来源不明的野生动物制品，支持合法、透明且更可持续的供应链。"],
+      ["做一名负责任的自然观察者",
+       "野外观察以不干扰动物为原则。不要触摸幼崽、拆除巢穴或擅自救助野生动物；遇到受伤动物时，应联系当地专业救助机构。"],
+      ["让保护知识产生影响",
+       "参加正规自然教育活动，支持有科学依据的保护项目，并在传播图片和信息时核实来源，避免夸大或误导。"]
+    ]
+  }
+};
+
+/* =========================
+   05. 打开与关闭文章弹窗
+========================= */
+const modal = document.getElementById("articleModal");
+const modalContent = document.getElementById("modalContent");
+const modalClose = document.getElementById("modalClose");
+
+document.querySelectorAll(".article-open").forEach(button => {
+  button.addEventListener("click", () => {
+    const data = articleData[button.dataset.article];
+    if (!data) return;
+
+    modalContent.replaceChildren();
+
+    const heading = document.createElement("h2");
+    heading.id = "modalTitle";
+    heading.textContent = data.title;
+    modalContent.appendChild(heading);
+
+    const intro = document.createElement("p");
+    intro.textContent = data.intro;
+    modalContent.appendChild(intro);
+
+    data.sections.forEach(section => {
+      const title = document.createElement("h3");
+      title.textContent = section[0];
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = section[1];
+
+      modalContent.append(title, paragraph);
+    });
+
+    const note = document.createElement("p");
+    note.textContent =
+      "自然保护没有一蹴而就的答案。请结合当地法律、专业建议和最新科学资料采取行动。";
+    modalContent.appendChild(note);
+
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    modalClose.focus();
+  });
+});
+
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+modalClose.addEventListener("click", closeModal);
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeModal();
+});
+
+/* =========================
+   06. 本地演示订阅表单
+========================= */
+const subscribeForm = document.getElementById("subscribeForm");
+const emailInput = document.getElementById("emailInput");
+const formMessage = document.getElementById("formMessage");
+
+subscribeForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!emailInput.checkValidity()) {
+    emailInput.reportValidity();
+    return;
+  }
+
+  formMessage.textContent =
+    "感谢关注野生动物保护！这是本地演示页面，尚未连接邮件订阅服务。";
+
+  emailInput.value = "";
+});
+
+/* =========================
+   07. 返回顶部与年份
+========================= */
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+  backTop.classList.toggle("show", window.scrollY > 450);
+});
+
+backTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
