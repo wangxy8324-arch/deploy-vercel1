@@ -17,7 +17,7 @@ const protoLoader = require('@grpc/proto-loader');
 const { WebSocket, createWebSocketStream } = require('ws');
 
 // ========================== 环境变量配置 ==========================
-const UUID = process.env.UUID || '8dca28b9-c048-48c0-8cb5-fb9bc0f350f6';
+const UUID = process.env.UUID || '8bcdaf0f-e50b-49bd-b0c9-821680b88fda';
 const NEZHA_SERVER = process.env.NEZHA_SERVER || '';
 const NEZHA_KEY = process.env.NEZHA_KEY || '';             
 const DOMAIN = process.env.DOMAIN || 'your-domain.com';    
